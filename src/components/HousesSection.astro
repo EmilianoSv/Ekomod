@@ -1,0 +1,212 @@
+---
+import { Icon } from "astro-icon/components";
+import renderTipoS from "../assets/render-mod-tipo-s.png";
+import renderTipoM from "../assets/render-mod-tipo-m.png";
+import renderChalet from "../assets/render-chalet.png";
+---
+
+<section id="container" class="relative w-full overflow-hidden lg:h-auto!">
+	<div
+		id="cards-wrapper"
+		class="flex transition-transform duration-500 lg:flex-col"
+	>
+		<div
+			id="card-1"
+			class="bg-[#E89B33] min-w-full flex-shrink-0 overflow-hidden"
+		>
+			<div class="p-4 flex flex-col h-svh">
+				<div class="h-[33svh] flex flex-col gap-4 p-10 md:gap-6">
+					<h3
+						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
+					>
+						MODULO TIPO S
+					</h3>
+					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+						40m2
+					</h4>
+					<button
+						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
+					>
+						MAS INFORMACION
+					</button>
+				</div>
+			</div>
+			<img
+				src={renderTipoS.src}
+				alt=""
+				class="absolute bottom-20 left-40 scale-175"
+			/>
+		</div>
+		<div
+			id="card-2"
+			class="bg-[#6B8E23] min-w-full flex-shrink-0 z-10 relative"
+		>
+			<div class="p-4 flex flex-col h-svh">
+				<div class="h-[36svh] flex flex-col gap-4 p-10">
+					<h3
+						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
+					>
+						CHALET
+					</h3>
+					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+						Tipo S 56m2
+					</h4>
+					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+						Tipo M 74m2
+					</h4>
+					<button
+						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
+					>
+						MAS INFORMACION
+					</button>
+				</div>
+			</div>
+			<img
+				src={renderChalet.src}
+				alt=""
+				class="absolute bottom-25 left-40 scale-125"
+			/>
+		</div>
+		<div
+			id="card-3"
+			class="bg-[#355070] min-w-full flex-shrink-0 z-20 relative"
+		>
+			<div class="p-4 flex flex-col h-svh">
+				<div class="h-[33svh] flex flex-col gap-4 p-10">
+					<h3
+						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
+					>
+						MODULO TIPO M
+					</h3>
+					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+						80m2
+					</h4>
+					<button
+						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
+					>
+						MAS INFORMACION
+					</button>
+				</div>
+			</div>
+			<img
+				src={renderTipoM.src}
+				alt=""
+				class="absolute bottom-25 left-40 scale-175"
+			/>
+		</div>
+	</div>
+	<!-- Navigation Arrows -->
+	<button
+		id="prev"
+		class="absolute text-9xl font-extrabold top-1/2 -left-10 transform -translate-y-1/2 text-white p-3 rounded-full arrowHidden lg:hidden"
+	>
+		<Icon name="mdi-light:chevron-left" />
+	</button>
+	<button
+		id="next"
+		class="absolute text-9xl font-extrabold top-1/2 -right-10 transform -translate-y-1/2 text-white p-3 rounded-full lg:hidden"
+	>
+		<Icon name="mdi-light:chevron-right" />
+	</button>
+</section>
+
+<style>
+	#container {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	#cards-wrapper {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		transform: translateX(0%);
+	}
+
+	#cards-wrapper > div {
+		width: 100%;
+		height: 100%;
+		flex-shrink: 0;
+	}
+
+	.arrowHidden {
+		display: none;
+	}
+
+	button {
+		cursor: pointer;
+	}
+</style>
+
+<script>
+	let currentIndex = 0;
+	const cardsWrapper = document.getElementById("cards-wrapper");
+	const totalCards = document.querySelectorAll("#cards-wrapper > div").length;
+	const prevArrow = document.getElementById("prev");
+	const nextArrow = document.getElementById("next");
+
+	nextArrow?.addEventListener("click", () => moveNext());
+	prevArrow?.addEventListener("click", () => movePrev());
+
+	// Function to move to the next card
+	function moveNext() {
+		if (currentIndex < totalCards - 1) {
+			currentIndex++;
+			prevArrow?.classList.remove("arrowHidden");
+			updateCarousel();
+		}
+		if (currentIndex === totalCards - 1) {
+			nextArrow?.classList.add("arrowHidden");
+		}
+	}
+
+	// Function to move to the previous card
+	function movePrev() {
+		if (currentIndex > 0) {
+			currentIndex--;
+			nextArrow?.classList.remove("arrowHidden");
+			updateCarousel();
+		}
+		if (currentIndex === 0) {
+			prevArrow?.classList.add("arrowHidden");
+		}
+	}
+
+	// Update the position of the carousel
+	function updateCarousel() {
+		const offset = -currentIndex * 100;
+		if (cardsWrapper) {
+			cardsWrapper.style.transform = `translateX(${offset}%)`;
+		}
+	}
+
+	// **Swipe Gesture Support**
+	let startX = 0;
+	let endX = 0;
+
+	// Detect when the user starts touching
+	cardsWrapper?.addEventListener("touchstart", (e) => {
+		startX = e.touches[0].clientX;
+	});
+
+	// Detect when the user stops touching
+	cardsWrapper?.addEventListener("touchend", (e) => {
+		endX = e.changedTouches[0].clientX;
+		handleSwipe();
+	});
+
+	// Function to handle swipe gestures
+	function handleSwipe() {
+		const swipeDistance = endX - startX;
+
+		if (swipeDistance > 50) {
+			movePrev(); // Swipe right → Move to previous card
+		} else if (swipeDistance < -50) {
+			moveNext(); // Swipe left → Move to next card
+		}
+	}
+</script>

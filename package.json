@@ -1,0 +1,19 @@
+{
+  "name": "casas-modulares",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/urbanist": "^5.2.5",
+    "@iconify-json/mdi-light": "^1.2.2",
+    "@tailwindcss/vite": "^4.0.15",
+    "astro": "^5.5.4",
+    "astro-icon": "^1.1.5",
+    "tailwindcss": "^4.0.15"
+  }
+}
