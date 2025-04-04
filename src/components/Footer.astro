@@ -1,26 +1,22 @@
 ---
-import background from "../assets/logo-ACG.png";
+import logoACG from "../assets/logo-ACG.png";
+import logoKonstruct from "../assets/logo-konstruct.png";
 ---
 
-<section id="container">
-	<div
-		class="flex flex-col p-4 h-[60svh] bg-[#DAC0A3] md:h-[70svh] lg:h-[80svh]"
-	>
-		<div class="m-auto md:flex md:flex-col">
-			<h3
-				class="text-3xl text-black font-semibold text-center md:text-7xl lg:text-6xl"
-			>
-				CONSTRUYE:
-			</h3>
-			<img src={background.src} class="w-72 md:w-3/4 md:self-center" />
-			<div
-				class="flex flex-col gap-1 text-xl text-center md:text-4xl md:gap-4"
-			>
-				<span>Casasmodulares@gmail.com</span>
-				<span>(+57) 322 612 6541</span>
-				<span>Instagram</span>
-				<span>Facebook</span>
-			</div>
-		</div>
+<section
+	id="container"
+	class="bg-[#DAC0A3] p-10 text-center flex flex-col gap-4"
+>
+	<h3 class="text-2xl font-bold lg:text-3xl">CONSTRUYEN</h3>
+	<div class="flex justify-center">
+		<img src={logoACG.src} alt="logoACG" class="w-30 lg:w-56" />
+		<span class="content-center font-bold text-3xl">&</span>
+		<img src={logoKonstruct.src} alt="logoKonstruct" class="w-40 lg:w-72" />
+	</div>
+	<div class="flex flex-col items-center lg:text-2xl lg:gap-1">
+		<span>konstruct.soluciones@gmail.com</span>
+		<span>(+57) 324 4270277</span>
+		<span>Instagram: konstruct.col</span>
+		<span>Facebook: konstruct</span>
 	</div>
 </section>
