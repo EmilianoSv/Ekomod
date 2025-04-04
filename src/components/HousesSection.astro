@@ -12,10 +12,10 @@ import renderChalet from "../assets/render-chalet.png";
 	>
 		<div
 			id="card-1"
-			class="bg-[#E89B33] min-w-full flex-shrink-0 overflow-hidden"
+			class="bg-[#E89B33] min-w-full flex-shrink-0 overflow-hidden md:max-h-svh md:flex md:pl-12"
 		>
-			<div class="p-4 flex flex-col h-svh">
-				<div class="h-[33svh] flex flex-col gap-4 p-10 md:gap-6">
+			<div class="p-4 flex flex-col h-svh md:mt-32">
+				<div class="h-[33svh] flex flex-col gap-4 md:gap-6">
 					<h3
 						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
 					>
@@ -24,74 +24,77 @@ import renderChalet from "../assets/render-chalet.png";
 					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
 						40m2
 					</h4>
-					<button
+					<a
+						href="#contact-us"
 						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
 					>
 						MAS INFORMACION
-					</button>
+					</a>
 				</div>
 			</div>
 			<img
 				src={renderTipoS.src}
 				alt=""
-				class="absolute bottom-20 left-40 scale-175"
+				class="absolute bottom-20 left-40 scale-175 md:scale-100 md:relative md:-bottom-10 md:left-0"
 			/>
 		</div>
 		<div
 			id="card-2"
-			class="bg-[#6B8E23] min-w-full flex-shrink-0 z-10 relative"
+			class="bg-[#6B8E23] min-w-full flex-shrink-0 z-10 relative md:max-h-svh md:flex md:pl-12"
 		>
-			<div class="p-4 flex flex-col h-svh">
-				<div class="h-[36svh] flex flex-col gap-4 p-10">
+			<div class="p-4 flex flex-col h-svh md:mt-32">
+				<div class="h-[36svh] flex flex-col gap-4 md:gap-6">
 					<h3
 						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
 					>
 						CHALET
 					</h3>
-					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+					<h3 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
 						Tipo S 56m2
-					</h4>
+					</h3>
 					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
 						Tipo M 74m2
 					</h4>
-					<button
+					<a
+						href="#contact-us"
 						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
 					>
 						MAS INFORMACION
-					</button>
+					</a>
 				</div>
 			</div>
 			<img
 				src={renderChalet.src}
 				alt=""
-				class="absolute bottom-25 left-40 scale-125"
+				class="absolute bottom-25 left-35 scale-125 md:scale-100 md:relative md:h-svh md:-bottom-0 md:left-120"
 			/>
 		</div>
 		<div
 			id="card-3"
-			class="bg-[#355070] min-w-full flex-shrink-0 z-20 relative"
+			class="bg-[#355070] min-w-full flex-shrink-0 z-20 relative md:max-h-svh md:flex md:pl-12"
 		>
-			<div class="p-4 flex flex-col h-svh">
-				<div class="h-[33svh] flex flex-col gap-4 p-10">
+			<div class="p-4 flex flex-col h-svh md:mt-32">
+				<div class="h-[33svh] flex flex-col gap-4 md:gap-6">
 					<h3
 						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
 					>
-						MODULO TIPO M
+						MODULO <br /> TIPO M
 					</h3>
 					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
 						80m2
 					</h4>
-					<button
+					<a
+						href="#contact-us"
 						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
 					>
 						MAS INFORMACION
-					</button>
+					</a>
 				</div>
 			</div>
 			<img
 				src={renderTipoM.src}
 				alt=""
-				class="absolute bottom-25 left-40 scale-175"
+				class="absolute bottom-25 left-40 scale-175 md:scale-100 md:relative md:-bottom-5"
 			/>
 		</div>
 	</div>
