@@ -15,25 +15,32 @@ import background from "../assets/background-image-2.png";
 	<div class="flex h-full p-4 lg:w-1/2">
 		<div class="flex flex-col items-center justify-around">
 			<div
-				class="flex flex-col h-52 justify-around md:grow md:justify-center"
+				id="title-container"
+				class="flex flex-col h-52 justify-around lg:grow lg:justify-center"
 			>
 				<h3
-					class="text-4xl text-center text-[#F5F5F5] md:text-[#6B8E23] font-bold md:text-8xl md:px-10 lg:text-7xl"
+					class="text-4xl text-center font-bold text-[#F5F5F5] md:text-6xl lg:text-[#6B8E23] lg:px-10"
 				>
 					Así de fácil es tener tu casa modular
 				</h3>
 			</div>
 			<div
-				class="flex flex-col text-center gap-2 grow justify-around md:h-[70svh] md:justify-around md:pb-10 md:w-full md:items-center lg:w-full lg:pb-0"
+				id="content-container"
+				class="flex flex-col text-center gap-2 grow justify-around md:px-4 lg:h-[70svh] lg:justify-around lg:pb-10 lg:w-full lg:items-center"
 			>
 				<div
-					class="flex flex-col items-center md:w-[80%] md:px-10 lg:w-full lg:flex-col lg:items-start lg:text-left lg:text-2xl"
+					id="bullet-container"
+					class="flex flex-col items-center lg:px-10 lg:flex-col lg:items-start lg:text-left"
 				>
-					<h4 class="font-bold text-white md:text-black">
+					<h4
+						id="paragraph-text"
+						class="font-bold text-white md:text-2xl lg:text-black"
+					>
 						1. Cuéntanos tu proyecto
 					</h4>
 					<p
-						class="text-[#F5F5F5] text-sm md:text-3xl md:grow lg:text-black lg:w-full lg:text-2xl"
+						id="paragraph-text"
+						class="text-[#F5F5F5] text-sm md:text-2xl lg:grow lg:text-black lg:w-full"
 					>
 						Nos contactas y nos compartes tu idea. Te asesoramos
 						para encontrar la mejor solución según tu terreno,
@@ -41,13 +48,18 @@ import background from "../assets/background-image-2.png";
 					</p>
 				</div>
 				<div
-					class="flex flex-col items-center md:w-[80%] md:px-10 lg:w-full lg:flex-col lg:items-start lg:text-left lg:text-2xl"
+					id="bullet-container"
+					class="flex flex-col items-center lg:px-10 lg:w-full lg:flex-col lg:items-start lg:text-left lg:text-2xl"
 				>
-					<h4 class="font-bold text-white md:text-black">
+					<h4
+						id="paragraph-text"
+						class="font-bold text-white md:text-2xl lg:text-black"
+					>
 						2. Diseñamos tu espacio ideal
 					</h4>
 					<p
-						class="text-[#F5F5F5] text-sm md:text-3xl md:grow lg:text-black lg:w-full lg:text-2xl"
+						id="paragraph-text"
+						class="text-[#F5F5F5] text-sm md:text-2xl lg:grow lg:text-black lg:w-full"
 					>
 						Adaptamos el diseño a tu estilo de vida y preferencias.
 						Te mostramos opciones personalizadas para que elijas la
@@ -55,13 +67,18 @@ import background from "../assets/background-image-2.png";
 					</p>
 				</div>
 				<div
-					class="flex flex-col items-center md:w-[80%] md:px-10 lg:w-full lg:flex-col lg:items-start lg:text-left lg:text-2xl"
+					id="bullet-container"
+					class="flex flex-col items-center lg:px-10 lg:flex-col lg:items-start lg:text-left lg:text-2xl"
 				>
-					<h4 class="font-bold text-white md:text-black">
+					<h4
+						id="paragraph-text"
+						class="font-bold text-white md:text-2xl lg:text-black"
+					>
 						3. Construimos con rapidez y calidad
 					</h4>
 					<p
-						class="text-[#F5F5F5] text-sm md:text-3xl md:grow lg:text-black lg:w-full lg:text-2xl"
+						id="paragraph-text"
+						class="text-[#F5F5F5] text-sm md:text-2xl lg:grow lg:text-black lg:w-full"
 					>
 						Fabricamos tu casa modular con materiales de alta
 						calidad y tecnología eficiente, reduciendo tiempos y
@@ -69,13 +86,18 @@ import background from "../assets/background-image-2.png";
 					</p>
 				</div>
 				<div
-					class="flex flex-col items-center md:w-[80%] md:px-10 lg:w-full lg:flex-col lg:items-start lg:text-left lg:text-2xl"
+					id="bullet-container"
+					class="flex flex-col items-center lg:px-10 lg:flex-col lg:items-start lg:text-left lg:text-2xl"
 				>
-					<h4 class="font-bold text-white md:text-black">
+					<h4
+						id="paragraph-text"
+						class="font-bold text-white md:text-2xl lg:text-black"
+					>
 						4. Te entregamos tu casa lista para disfrutar
 					</h4>
 					<p
-						class="text-[#F5F5F5] text-sm md:text-3xl md:grow lg:text-black lg:w-full lg:text-2xl"
+						id="paragraph-text"
+						class="text-[#F5F5F5] text-sm md:text-2xl lg:grow lg:text-black lg:w-full"
 					>
 						Cumplimos con nuestra promesa de entrega para que en
 						poco tiempo puedas comenzar a vivir o rentar tu nueva
@@ -86,3 +108,37 @@ import background from "../assets/background-image-2.png";
 		</div>
 	</div>
 </section>
+
+<style>
+	@media screen and (min-width: 400px) and (max-width: 640px) {
+		#paragraph-text {
+			font-size: 1.2rem;
+		}
+	}
+
+	@media screen and (min-width: 1230px) and (max-width: 1440px) {
+		h3 {
+			font-size: 2.5rem;
+		}
+
+		#title-container {
+			height: 10vh;
+		}
+
+		#bullet-container {
+			gap: 2px;
+		}
+
+		#content-container {
+			justify-content: center;
+			padding-bottom: 0;
+		}
+		h4 {
+			font-size: 1.3rem;
+		}
+
+		p {
+			font-size: 1.2rem;
+		}
+	}
+</style>
