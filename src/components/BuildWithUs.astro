@@ -3,20 +3,23 @@ import { Icon } from "astro-icon/components";
 ---
 
 <section id="build-with-us" class="h-svh flex flex-col">
-	<div class="content-center pt-3.5 sm:pt-14">
-		<h2 class="text-[#E89B33] text-3xl font-bold text-center md:text-7xl">
+	<div class="content-center pt-3.5 sm:pt-14 md:px-2">
+		<h2
+			class="text-[#E89B33] text-3xl font-bold text-center md:text-5xl lg:text-7xl"
+		>
 			Ventajas de construír con nosotros
 		</h2>
 	</div>
 	<div
-		class="grow sm:grid sm:grid-cols-2 sm:grid-rows-2 sm:items-center sm:px-12"
+		id="cards-container"
+		class="grow sm:grid xl:grid-cols-2 xl:grid-rows-2 sm:items-center sm:px-12"
 	>
 		<div
 			class="h-1/4 w-full text-center content-center sm:flex sm:p-4 sm:h-fit"
 		>
 			<div
 				id="box-with-shadow"
-				class="w-24 h-12 rounded-2xl flex m-auto md:w-80 md:h-32"
+				class="w-24 h-12 rounded-2xl flex m-auto md:w-44 md:h-32 lg:w-80 lg:h-32"
 			>
 				<span class="m-auto">
 					<Icon name="mdi-light:clock" class="text-4xl sm:text-8xl" />
@@ -24,7 +27,10 @@ import { Icon } from "astro-icon/components";
 			</div>
 			<div class="py-2 sm:text-left sm:h-fit sm:w-[80%]">
 				<h3 class="text-xl font-bold sm:text-4xl sm:px-4">Rapidez</h3>
-				<p class="text-xs px-4 sm:text-lg lg:text-2xl lg:pt-2">
+				<p
+					id="paragraph-text"
+					class="text-xs px-4 sm:text-lg md:text-xl lg:text-2xl md:pt-2"
+				>
 					Construimos tu casa modular en aproximadamente 60 días,
 					mucho más rápido que una obra tradicional. Así puedes
 					disfrutar tu nuevo espacio sin largas esperas ni demoras.
@@ -36,7 +42,7 @@ import { Icon } from "astro-icon/components";
 		>
 			<div
 				id="box-with-shadow"
-				class="w-24 h-12 rounded-2xl flex m-auto md:w-80 md:h-32"
+				class="w-24 h-12 rounded-2xl flex m-auto md:w-44 md:h-32 lg:w-80 lg:h-32"
 			>
 				<span class="m-auto">
 					<Icon
@@ -49,7 +55,10 @@ import { Icon } from "astro-icon/components";
 				<h3 class="text-xl font-bold sm:text-4xl sm:px-4">
 					Costo accesible
 				</h3>
-				<p class="text-xs px-4 sm:text-lg lg:text-2xl lg:pt-2">
+				<p
+					id="paragraph-text"
+					class="text-xs px-4 sm:text-lg md:text-xl lg:text-2xl md:pt-2"
+				>
 					Te ofrecemos una solución eficiente y económica, con precios
 					claros desde el inicio y sin sobrecostos ocultos. Obtén la
 					mejor relación calidad-precio en tu inversión.
@@ -61,7 +70,7 @@ import { Icon } from "astro-icon/components";
 		>
 			<div
 				id="box-with-shadow"
-				class="w-24 h-12 rounded-2xl flex m-auto md:w-80 md:h-32"
+				class="w-24 h-12 rounded-2xl flex m-auto md:w-44 md:h-32 lg:w-80 lg:h-32"
 			>
 				<span class="m-auto">
 					<Icon name="mdi-light:truck" class="text-4xl sm:text-8xl" />
@@ -71,7 +80,10 @@ import { Icon } from "astro-icon/components";
 				<h3 class="text-xl font-bold sm:text-4xl sm:px-4">
 					Facil transporte
 				</h3>
-				<p class="text-xs px-4 sm:text-lg lg:text-2xl lg:pt-2">
+				<p
+					id="paragraph-text"
+					class="text-xs px-4 sm:text-lg md:text-xl lg:text-2xl md:pt-2"
+				>
 					Nuestras casas modulares están diseñadas para ser
 					trasladadas e instaladas con rapidez y precisión, sin
 					complicaciones. Esto nos permite construir en zonas remotas
@@ -84,19 +96,22 @@ import { Icon } from "astro-icon/components";
 		>
 			<div
 				id="box-with-shadow"
-				class="w-24 h-12 rounded-2xl flex m-auto md:w-80 md:h-32 justify-center"
+				class="w-24 h-12 rounded-2xl flex m-auto md:w-44 md:h-32 lg:w-80 lg:h-32 justify-center"
 			>
 				<img
 					src="/src/assets/eco-outline.png"
 					alt="eco-icon"
-					class="text-7xl md:text-8xl"
+					class="text-7xl lg:text-8xl"
 				/>
 			</div>
 			<div class="py-2 sm:text-left sm:h-fit sm:w-[80%]">
 				<h3 class="text-xl font-bold sm:text-4xl sm:px-4">
 					Sostenibilidad
 				</h3>
-				<p class="text-xs px-4 sm:text-lg lg:text-2xl lg:pt-2">
+				<p
+					id="paragraph-text"
+					class="text-xs px-4 sm:text-lg md:text-xl lg:text-2xl md:pt-2"
+				>
 					Construimos con un sistema que reduce residuos y optimiza
 					materiales, minimizando el impacto en el entorno. Además,
 					puedes incorporar soluciones eco-friendly como paneles
@@ -110,5 +125,35 @@ import { Icon } from "astro-icon/components";
 <style>
 	#box-with-shadow {
 		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 50%);
+	}
+
+	@media screen and (min-width: 400px) and (max-width: 640px) {
+		#paragraph-text {
+			font-size: 1rem;
+		}
+	}
+
+	@media screen and (min-width: 1230px) and (max-width: 1440px) {
+		h2 {
+			font-size: 3rem;
+		}
+
+		#cards-container {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
+		}
+
+		#box-with-shadow {
+			width: 10rem;
+			height: 6rem;
+		}
+
+		h3 {
+			font-size: 1.5rem;
+		}
+
+		#paragraph-text {
+			font-size: 1rem;
+		}
 	}
 </style>

@@ -12,21 +12,21 @@ import renderChalet from "../assets/render-chalet.png";
 	>
 		<div
 			id="card-1"
-			class="bg-[#E89B33] min-w-full flex-shrink-0 overflow-hidden md:max-h-svh md:flex md:pl-12"
+			class="bg-[#E89B33] min-w-full flex-shrink-0 overflow-hidden md:max-h-svh md:flex md:pl-12 lg:h-fit"
 		>
 			<div class="p-4 flex flex-col h-svh md:mt-32">
-				<div class="h-[33svh] flex flex-col gap-4 md:gap-6">
+				<div class="h-[33svh] flex flex-col gap-4 md:gap-6 lg:gap-2">
 					<h3
 						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
 					>
 						MODULO TIPO S
 					</h3>
-					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+					<h3 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
 						40m2
-					</h4>
+					</h3>
 					<a
 						href="#contact-us"
-						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
+						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28 lg:content-center"
 					>
 						MAS INFORMACION
 					</a>
@@ -34,8 +34,10 @@ import renderChalet from "../assets/render-chalet.png";
 			</div>
 			<img
 				src={renderTipoS.src}
-				alt=""
-				class="absolute bottom-20 left-40 scale-175 md:scale-100 md:relative md:-bottom-10 md:left-0"
+				alt="render-tipo-s"
+				id="render-tipo-s"
+				width="100%"
+				class="absolute bottom-20 left-40 scale-175 md:scale-110 md:relative md:-bottom-140 md:-left-80 md:w-[716px] md:h-[600px] lg:w-fit lg:h-[800px] lg:-bottom-140 lg:-left-90 xl:-bottom-50 xl:left-40"
 			/>
 		</div>
 		<div
@@ -43,7 +45,7 @@ import renderChalet from "../assets/render-chalet.png";
 			class="bg-[#6B8E23] min-w-full flex-shrink-0 z-10 relative md:max-h-svh md:flex md:pl-12"
 		>
 			<div class="p-4 flex flex-col h-svh md:mt-32">
-				<div class="h-[36svh] flex flex-col gap-4 md:gap-6">
+				<div class="h-[36svh] flex flex-col gap-4 md:gap-6 lg:gap-4">
 					<h3
 						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
 					>
@@ -52,9 +54,9 @@ import renderChalet from "../assets/render-chalet.png";
 					<h3 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
 						Tipo S 56m2
 					</h3>
-					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+					<h3 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
 						Tipo M 74m2
-					</h4>
+					</h3>
 					<a
 						href="#contact-us"
 						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
@@ -65,8 +67,9 @@ import renderChalet from "../assets/render-chalet.png";
 			</div>
 			<img
 				src={renderChalet.src}
-				alt=""
-				class="absolute bottom-25 left-35 scale-125 md:scale-100 md:relative md:h-svh md:-bottom-0 md:left-120"
+				alt="render-chalet"
+				id="render-chalet"
+				class="absolute bottom-25 left-35 scale-125 md:scale-100 md:relative md:h-svh md:-bottom-0 md:left-0 xl:left-110"
 			/>
 		</div>
 		<div
@@ -74,18 +77,18 @@ import renderChalet from "../assets/render-chalet.png";
 			class="bg-[#355070] min-w-full flex-shrink-0 z-20 relative md:max-h-svh md:flex md:pl-12"
 		>
 			<div class="p-4 flex flex-col h-svh md:mt-32">
-				<div class="h-[33svh] flex flex-col gap-4 md:gap-6">
+				<div class="h-[33svh] flex flex-col gap-4 md:gap-6 lg:gap-2">
 					<h3
 						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
 					>
 						MODULO <br /> TIPO M
 					</h3>
-					<h4 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
+					<h3 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
 						80m2
-					</h4>
+					</h3>
 					<a
 						href="#contact-us"
-						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
+						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28 lg:content-center"
 					>
 						MAS INFORMACION
 					</a>
@@ -93,8 +96,9 @@ import renderChalet from "../assets/render-chalet.png";
 			</div>
 			<img
 				src={renderTipoM.src}
-				alt=""
-				class="absolute bottom-25 left-40 scale-175 md:scale-100 md:relative md:-bottom-5"
+				alt="render-tipo-m"
+				id="render-tipo-m"
+				class="absolute bottom-25 left-40 scale-175 md:scale-100 md:relative md:-bottom-5 md:-left-20 xl:left-40"
 			/>
 		</div>
 	</div>
@@ -142,6 +146,27 @@ import renderChalet from "../assets/render-chalet.png";
 
 	button {
 		cursor: pointer;
+	}
+
+	@media screen and (min-width: 1230px) and (max-width: 1440px) {
+		#render-tipo-s {
+			top: -75px;
+			left: 100px;
+			scale: 0.9;
+		}
+		#render-chalet {
+			left: 125px;
+		}
+		#render-tipo-m {
+			left: 45px;
+		}
+		h3 {
+			font-size: 4rem;
+		}
+		a {
+			width: 22rem;
+			font-size: 2rem;
+		}
 	}
 </style>
 
