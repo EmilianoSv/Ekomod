@@ -1,16 +1,10 @@
 ---
-import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 ---
 
 <nav id="navbar" class="h-20 w-full flex bg-[#ffffffe3] absolute top-0">
 	<div class="m-auto flex gap-3">
-		<Image
-			src="/src/assets/ekomod-logo.png"
-			alt="ekomod-logo"
-			width="40"
-			height="40"
-			class="md:w-12 md:h-12"
-		/>
+		<Icon name="ekomod-logo" class="md:w-12 md:h-12" />
 		<span class="text-black text-2xl content-center font-bold md:text-4xl"
 			>EKOMOD</span
 		>
