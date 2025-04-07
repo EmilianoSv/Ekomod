@@ -1,3 +1,7 @@
+---
+import { ContactForm, contactFormValidator } from "./_ContactForm";
+---
+
 <section id="contact-us" class="h-svh content-center">
 	<div
 		id="form-container"
@@ -11,76 +15,7 @@
 		<div
 			class="md:px-10 lg:px-0 lg:self-center lg:w-[90%] lg:content-center"
 		>
-			<form
-				action=""
-				class="flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:content-center lg:gap-10 lg:h-auto"
-				id="contact-form"
-			>
-				<div class="flex flex-col">
-					<label
-						for="name"
-						class="text-xl md:text-3xl md:py-2 lg:text-3xl"
-						>Nombre completo:</label
-					>
-					<input
-						name="name"
-						type="text"
-						class="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-16 lg:h-16 md:text-2xl"
-					/>
-				</div>
-				<div class="flex flex-col">
-					<label for="email" class="text-xl md:text-3xl md:py-2"
-						>Email:</label
-					>
-					<input
-						name="email"
-						type="email"
-						class="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-16 lg:h-16 md:text-2xl"
-					/>
-				</div>
-				<div class="flex flex-col">
-					<label for="phone" class="text-xl md:text-3xl md:py-2"
-						>Telefono:</label
-					>
-					<input
-						name="phone"
-						type="tel"
-						class="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-16 lg:h-16 md:text-2xl"
-					/>
-				</div>
-				<div class="flex flex-col">
-					<label
-						for="project-select"
-						class="text-xl md:text-3xl md:py-2"
-						>Proyecto de interés:</label
-					>
-					<select
-						name="projects"
-						class="bg-gray-400 w-full h-12 rounded-xl px-4 pt-3 pb-4 md:h-16 md:text-2xl appearance-none lg:h-16"
-					>
-						<option value="" disabled selected>Seleccione</option>
-						<option value="casa">Casa</option>
-						<option value="chalet">Chalet</option>
-						<option value="cubiculo">Cubiculo fran</option>
-					</select>
-				</div>
-				<div class="flex flex-col lg:col-span-2">
-					<label
-						for="message"
-						class="text-xl md:text-3xl md:py-2 lg:text-3xl"
-						>Mensaje</label
-					>
-					<textarea
-						name="message"
-						placeholder="Cuentanos cual es tu presupuesto, zona de construccion, ubicacion y tamaño del lote y cualquier informacion relevante para que podámos darte la cotizacion más precisa posible!"
-						class="bg-gray-400 w-full mt-1 rounded-xl p-4 md:text-2xl lg:text-2xl"
-						rows="5"></textarea>
-				</div>
-				<button
-					class="bg-[#355070] w-full rounded-xl text-white text-xl h-14 mt-2 md:h-20 md:text-3xl md:font-bold md:mt-4 lg:col-span-2 lg:text-3xl hover:opacity-95"
-					type="submit">ENVIAR</button
-				>
-			</form>
+			<ContactForm client:load />
 		</div>
 	</div>
 </section>
