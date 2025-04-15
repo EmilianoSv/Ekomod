@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import logoACG from "../assets/logo-ACG.png";
 import logoKonstruct from "../assets/logo-konstruct.png";
 ---
@@ -20,7 +21,17 @@ import logoKonstruct from "../assets/logo-konstruct.png";
 	<div class="flex flex-col items-center md:text-xl lg:text-2xl lg:gap-1">
 		<span>konstruct.soluciones@gmail.com</span>
 		<span>(+57) 324 4270277</span>
-		<span>Instagram: konstruct.col</span>
-		<span>Facebook: konstruct</span>
+		<a
+			href="https://www.instagram.com/konstruct.col/"
+			class="flex items-center gap-2"
+		>
+			<Icon name="instagram" /><span>konstruct.col</span>
+		</a>
+		<a
+			href="https://www.facebook.com/profile.php?id=61574504593921"
+			class="flex items-center gap-2"
+		>
+			<Icon name="facebook" /><span>konstruct</span>
+		</a>
 	</div>
 </section>
