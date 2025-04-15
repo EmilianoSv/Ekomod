@@ -1,14 +1,17 @@
 ---
 import background from "../assets/background-image-2.png";
+import { Image } from "astro:assets";
 ---
 
 <section id="container" class="h-svh lg:flex">
 	<div
 		class="w-full h-full bg-black -z-10 absolute lg:relative lg:z-0 lg:w-1/2"
 	>
-		<img
-			src={background.src}
+		<Image
+			src={background}
 			alt="Casas modulares"
+			format="avif"
+			quality="high"
 			class="w-full h-full object-cover opacity-60"
 		/>
 	</div>

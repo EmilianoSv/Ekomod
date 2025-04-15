@@ -303,7 +303,17 @@ const MessageSucceeded = () => {
 					</p>
 				</div>
 				<div className="w-52 h-52 lg:order-1">
-					<img src={success.src} alt="ekomod-logo" />
+					<picture>
+						<source type="image/avif" />
+						<img
+							src={success.src}
+							alt="ekomod-logo"
+							width={208}
+							height={208}
+							loading="lazy"
+							decoding="async"
+						/>
+					</picture>
 				</div>
 			</div>
 		</div>

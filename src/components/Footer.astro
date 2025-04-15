@@ -2,6 +2,7 @@
 import { Icon } from "astro-icon/components";
 import logoACG from "../assets/logo-ACG.png";
 import logoKonstruct from "../assets/logo-konstruct.png";
+import { Image } from "astro:assets";
 ---
 
 <section
@@ -10,12 +11,22 @@ import logoKonstruct from "../assets/logo-konstruct.png";
 >
 	<h3 class="text-2xl font-bold lg:text-3xl">CONSTRUYEN</h3>
 	<div class="flex justify-center">
-		<img src={logoACG.src} alt="logoACG" class="w-30 md:w-48 lg:w-56" />
+		<Image
+			src={logoACG}
+			alt="logoACG"
+			format="avif"
+			quality="mid"
+			class="w-30 md:w-48 lg:w-56"
+		/>
 		<span class="content-center font-bold text-3xl">&</span>
 		<img
 			src={logoKonstruct.src}
 			alt="logoKonstruct"
 			class="w-40 md:w-64 lg:w-72"
+			width="309"
+			height="150"
+			loading="lazy"
+			decoding="async"
 		/>
 	</div>
 	<div class="flex flex-col items-center md:text-xl lg:text-2xl lg:gap-1">

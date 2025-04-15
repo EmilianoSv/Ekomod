@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import renderTipoS from "../assets/render-mod-tipo-s.png";
 import renderTipoM from "../assets/render-mod-tipo-m.png";
 import renderChalet from "../assets/render-chalet.png";
+import { Image } from "astro:assets";
 ---
 
 <section id="container" class="relative w-full overflow-hidden lg:h-auto!">
@@ -32,12 +33,13 @@ import renderChalet from "../assets/render-chalet.png";
 					</a>
 				</div>
 			</div>
-			<img
-				src={renderTipoS.src}
+			<Image
+				src={renderTipoS}
 				alt="render-tipo-s"
 				id="render-tipo-s"
-				width="100%"
-				class="absolute bottom-20 left-40 scale-175 md:scale-110 md:relative md:-bottom-70 md:-left-20 md:w-[716px] md:h-[600px] lg:w-fit lg:h-[800px] lg:-bottom-25 lg:-left-10"
+				format="avif"
+				quality="high"
+				class="absolute bottom-20 left-40 scale-175 md:scale-110 md:relative md:-bottom-70 md:-left-20 md:w-[716px] md:h-[600px] lg:w-fit lg:h-[800px] lg:-bottom-25 lg:-left-10 2xl:left-20"
 			/>
 		</div>
 		<div
@@ -65,10 +67,12 @@ import renderChalet from "../assets/render-chalet.png";
 					</a>
 				</div>
 			</div>
-			<img
-				src={renderChalet.src}
+			<Image
+				src={renderChalet}
 				alt="render-chalet"
 				id="render-chalet"
+				format="avif"
+				quality="high"
 				class="absolute bottom-25 left-35 scale-125 md:scale-100 md:relative md:h-svh md:-bottom-0 md:left-0 xl:left-110"
 			/>
 		</div>
@@ -94,10 +98,13 @@ import renderChalet from "../assets/render-chalet.png";
 					</a>
 				</div>
 			</div>
-			<img
-				src={renderTipoM.src}
+
+			<Image
+				src={renderTipoM}
 				alt="render-tipo-m"
 				id="render-tipo-m"
+				quality="high"
+				format="avif"
 				class="absolute bottom-25 left-40 scale-175 md:scale-100 md:relative md:-bottom-5 md:-left-20 xl:left-40"
 			/>
 		</div>
