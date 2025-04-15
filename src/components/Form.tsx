@@ -65,7 +65,7 @@ export function Form({
 				<MessageSucceeded />
 			) : (
 				<>
-					<h3 className="text-5xl text-center w-full md:text-7xl lg:text-center lg:px-20 lg:pt-20">
+					<h3 className="text-5xl text-center w-full md:text-6xl lg:text-center lg:px-20 lg:pt-20">
 						Contáctanos
 					</h3>
 					<div className="md:px-10 lg:px-0 lg:self-center lg:w-[90%] lg:content-center">
@@ -74,7 +74,7 @@ export function Form({
 								{...formProps}
 								method="POST"
 								action="/"
-								className="flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:content-center lg:gap-10 lg:h-auto"
+								className="flex flex-col gap-2 lg:grid lg:grid-cols-2 lg:content-center lg:gap-4 lg:h-auto"
 								id="contact-form"
 								onSubmit={async (e) => {
 									e.preventDefault();

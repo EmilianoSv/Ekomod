@@ -55,42 +55,42 @@ const FormContent = () => {
 			<div className="flex flex-col relative">
 				<label
 					htmlFor="name"
-					className="text-xl md:text-3xl md:py-2 lg:text-3xl"
+					className="text-xl md:text-2xl md:py-2 lg:text-2xl"
 				>
 					Nombre completo:
 				</label>
 				<Input
 					id="name"
 					{...contactFormValidator.inputProps.name}
-					className="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-16 lg:h-16 md:text-2xl"
+					className="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-12 lg:h-16 md:text-2xl"
 				/>
 			</div>
 			<div className="flex flex-col relative">
-				<label htmlFor="email" className="text-xl md:text-3xl md:py-2">
+				<label htmlFor="email" className="text-xl md:text-2xl md:py-2">
 					Email:
 				</label>
 
 				<Input
 					id="email"
 					{...contactFormValidator.inputProps.email}
-					className="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-16 lg:h-16 md:text-2xl"
+					className="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-12 lg:h-16 md:text-2xl"
 				/>
 			</div>
 			<div className="flex flex-col relative">
-				<label htmlFor="phone" className="text-xl md:text-3xl md:py-2">
+				<label htmlFor="phone" className="text-xl md:text-2xl md:py-2">
 					Telefono:
 				</label>
 
 				<Input
 					id="phone"
 					{...contactFormValidator.inputProps.phone}
-					className="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-16 lg:h-16 md:text-2xl"
+					className="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-12 lg:h-16 md:text-2xl"
 				/>
 			</div>
 			<div className="flex flex-col relative">
 				<label
 					htmlFor="projects"
-					className="text-xl md:text-3xl md:py-2"
+					className="text-xl md:text-2xl md:py-2"
 				>
 					Proyecto de interés:
 				</label>
@@ -98,7 +98,7 @@ const FormContent = () => {
 				<Select
 					id="projects"
 					{...contactFormValidator.inputProps.projects}
-					className="bg-gray-400 w-full h-12 rounded-xl px-4 pt-3 pb-4 md:h-16 md:text-2xl appearance-none lg:h-16"
+					className="bg-gray-400 w-full h-12 rounded-xl px-4 pt-3 pb-4 md:h-13 md:text-lg appearance-none lg:h-16"
 					options={[
 						{
 							value: "casa",
@@ -118,7 +118,7 @@ const FormContent = () => {
 			<div className="flex flex-col lg:col-span-2 relative">
 				<label
 					htmlFor="message"
-					className="text-xl md:text-3xl md:py-2 lg:text-3xl"
+					className="text-xl md:text-2xl md:py-2 lg:text-2xl"
 				>
 					Mensaje
 				</label>
@@ -127,8 +127,8 @@ const FormContent = () => {
 					id="message"
 					{...contactFormValidator.inputProps.message}
 					placeholder="Cuentanos cual es tu presupuesto, zona de construccion, ubicacion y tamaño del lote y cualquier informacion relevante para que podámos darte la cotizacion más precisa posible!"
-					className="bg-gray-400 w-full mt-1 rounded-xl p-4 md:text-2xl lg:text-2xl"
-					rows={5}
+					className="bg-gray-400 w-full mt-1 rounded-xl p-4 md:text-xl"
+					rows={4}
 				/>
 			</div>
 			<button
