@@ -1,57 +1,77 @@
 ---
-import { ContactForm, contactFormValidator } from "./_ContactForm";
+import { ContactForm } from "./_ContactForm";
+import { Mail, Phone, MapPin } from "lucide-react";
 ---
 
-<section id="contact-us" class="h-svh content-center">
-	<div
-		id="form-container"
-		class="px-4 py-4 flex flex-col gap-4 md:h-full md:justify-center md:gap-2 lg:px-2 lg:py-0"
-	>
-		<ContactForm client:load />
+<section id="contact-us" class="py-20 md:py-32 bg-linear-to-br from-[#355070] via-[#2a4058] to-[#1f2f40] relative overflow-hidden">
+	<!-- Decorative elements -->
+	<div class="absolute inset-0 opacity-10">
+		<div class="absolute top-10 right-10 w-72 h-72 bg-[#E89B33] rounded-full blur-3xl"></div>
+		<div class="absolute bottom-10 left-10 w-96 h-96 bg-[#6B8E23] rounded-full blur-3xl"></div>
+	</div>
+
+	<div class="container mx-auto px-4 md:px-6 relative z-10">
+		<div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+			<!-- Left side - Info -->
+			<div class="text-white space-y-8 lg:col-span-2">
+				<div>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+						¿Listo para comenzar?
+					</h2>
+					<p class="text-xl md:text-2xl text-white/80">
+						Cuéntanos sobre tu proyecto y te ayudaremos a hacerlo realidad
+					</p>
+				</div>
+
+				<div class="space-y-6">
+					<div class="flex items-start gap-4">
+						<div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+							<Mail class="w-6 h-6 text-[#E89B33]" />
+						</div>
+						<div>
+							<h3 class="font-semibold text-lg mb-1">Email</h3>
+							<a href="mailto:konstruct.soluciones@gmail.com" class="text-white/80 hover:text-white transition-colors">
+								konstruct.soluciones@gmail.com
+							</a>
+						</div>
+					</div>
+
+					<div class="flex items-start gap-4">
+						<div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+							<Phone class="w-6 h-6 text-[#6B8E23]" />
+						</div>
+						<div>
+							<h3 class="font-semibold text-lg mb-1">Teléfono</h3>
+							<a href="tel:+573244270277" class="text-white/80 hover:text-white transition-colors">
+								(+57) 324 4270277
+							</a>
+						</div>
+					</div>
+
+					<div class="flex items-start gap-4">
+						<div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0">
+							<MapPin class="w-6 h-6 text-[#E89B33]" />
+						</div>
+						<div>
+							<h3 class="font-semibold text-lg mb-1">Ubicación</h3>
+							<p class="text-white/80">
+								Colombia
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="pt-8">
+					<h3 class="font-semibold text-lg mb-4">Horario de atención</h3>
+					<p class="text-white/80">Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+					<p class="text-white/80">Sábados: 9:00 AM - 2:00 PM</p>
+				</div>
+			</div>
+
+			<!-- Right side - Form -->
+			<div class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 lg:col-span-3">
+				<ContactForm client:load />
+			</div>
+		</div>
 	</div>
 </section>
-
-<style>
-	@media screen and (min-width: 1230px) and (max-width: 1440px) {
-		h3 {
-			font-size: 3rem;
-			padding-top: 0;
-			height: 5rem;
-		}
-
-		#form-container {
-			gap: 0rem;
-		}
-
-		#contact-form {
-			gap: 0.5rem;
-		}
-
-		label {
-			font-size: 1.5rem;
-		}
-
-		input {
-			height: calc(var(--spacing) * 10);
-			padding: 0.5rem;
-			font-size: 1rem;
-		}
-
-		select {
-			height: calc(var(--spacing) * 10);
-			font-size: 1rem;
-			padding: 0.5rem;
-		}
-
-		textarea {
-			height: calc(var(--spacing) * 40);
-			padding: 0.5rem;
-			font-size: 1rem;
-		}
-
-		button {
-			height: calc(var(--spacing) * 10);
-			font-size: 1rem;
-		}
-	}
-</style>

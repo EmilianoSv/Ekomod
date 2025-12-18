@@ -1,147 +1,179 @@
-import { createForm } from "simple:form";
 import { Form, Input, Select, Textarea, useFormContext } from "./Form";
 import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import { Mail, User, Phone as PhoneIcon, MessageSquare, Home } from "lucide-react";
 
-export const contactFormValidator = createForm({
+export const contactFormValidator = z.object({
 	name: z
 		.string()
 		.min(3, "El nombre es requerido y debe tener al menos 3 caracteres.")
 		.regex(
 			/^[a-zA-Z\s]+$/,
 			"El nombre solo debe contener letras y espacios. "
-		), // Only letters and spaces
+		),
 
 	email: z
 		.string()
 		.email("El email no es válido")
-		.min(1, "El email es requerido."), // Ensuring email is not empty
+		.min(1, "El email es requerido."),
 
 	phone: z
 		.string()
-		.min(5, "El teléfono es requerido.") // Minimum length validation for phone
+		.min(5, "El teléfono es requerido.")
 		.regex(
 			/^[\d\+\(\)\-\s]+$/,
 			"El teléfono solo debe contener números y caracteres válidos."
-		), // Valid phone characters
+		),
 
 	projects: z
 		.string()
-		.min(1, "El proyecto es requerido.") // Ensuring the user selects a project
+		.min(1, "El proyecto es requerido.")
 		.regex(
 			/^(?!Seleccione).*$/,
 			"Por favor, selecciona un proyecto válido."
-		), // Optional regex if you have a default option like "Seleccionar"
+		),
 
 	message: z
 		.string()
-		.min(10, "El mensaje debe tener al menos 10 caracteres.") // Minimum length for messages
-		.max(500, "El mensaje no puede exceder los 500 caracteres."), // Optional: max message length for UX
+		.min(10, "El mensaje debe tener al menos 10 caracteres.")
+		.max(500, "El mensaje no puede exceder los 500 caracteres."),
 });
 
 export function ContactForm() {
 	return (
 		<>
-			<Form validator={contactFormValidator.validator}>
+			<Form validator={contactFormValidator}>
 				<FormContent />
 			</Form>
 		</>
 	);
 }
-
 const FormContent = () => {
 	const { value: formState } = useFormContext();
 	return (
-		<>
-			<div className="flex flex-col relative">
-				<label
-					htmlFor="name"
-					className="text-xl md:text-2xl md:py-2 lg:text-2xl"
-				>
-					Nombre completo:
-				</label>
-				<Input
-					id="name"
-					{...contactFormValidator.inputProps.name}
-					className="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-12 lg:h-16 md:text-2xl"
-				/>
+		<div className="space-y-8 max-w-2xl mx-auto">
+			<div className="text-center mb-10">
+				<h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+					Solicita tu cotización
+				</h3>
+				<p className="text-lg text-gray-600">
+					Completa el formulario y te contactaremos pronto
+				</p>
 			</div>
-			<div className="flex flex-col relative">
-				<label htmlFor="email" className="text-xl md:text-2xl md:py-2">
-					Email:
-				</label>
+			<div className="space-y-6">
+				<div className="relative">
+					<label
+						htmlFor="name"
+						className="block text-sm font-semibold text-gray-700 mb-2"
+					>
+						Nombre completo
+					</label>
+					<div className="relative">
+						<div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+							<User className="w-5 h-5" />
+						</div>
+						<Input
+							id="name"
+							name="name"
+							className="w-full h-14 pl-12 pr-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#E89B33] focus:bg-white transition-all text-base"
+							placeholder="Juan Pérez"
+						/>
+					</div>
+				</div>
 
-				<Input
-					id="email"
-					{...contactFormValidator.inputProps.email}
-					className="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-12 lg:h-16 md:text-2xl"
-				/>
-			</div>
-			<div className="flex flex-col relative">
-				<label htmlFor="phone" className="text-xl md:text-2xl md:py-2">
-					Telefono:
-				</label>
+				<div className="relative">
+					<label
+						htmlFor="email"
+						className="block text-sm font-semibold text-gray-700 mb-2"
+					>
+						Correo electrónico
+					</label>
+					<div className="relative">
+						<div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+							<Mail className="w-5 h-5" />
+						</div>
+						<Input
+							id="email"
+							type="email"
+							name="email"
+							className="w-full h-14 pl-12 pr-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#E89B33] focus:bg-white transition-all text-base"
+							placeholder="correo@ejemplo.com"
+						/>
+					</div>
+				</div>
 
-				<Input
-					id="phone"
-					{...contactFormValidator.inputProps.phone}
-					className="bg-gray-400 w-full h-12 rounded-xl p-4 md:h-12 lg:h-16 md:text-2xl"
-				/>
-			</div>
-			<div className="flex flex-col relative">
-				<label
-					htmlFor="projects"
-					className="text-xl md:text-2xl md:py-2"
-				>
-					Proyecto de interés:
-				</label>
+				<div className="relative">
+					<label
+						htmlFor="phone"
+						className="block text-sm font-semibold text-gray-700 mb-2"
+					>
+						Teléfono
+					</label>
+					<div className="relative">
+						<div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+							<PhoneIcon className="w-5 h-5" />
+						</div>
+						<Input
+							id="phone"
+							name="phone"
+							className="w-full h-14 pl-12 pr-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#E89B33] focus:bg-white transition-all text-base"
+							placeholder="+57 300 123 4567"
+						/>
+					</div>
+				</div>
 
-				<Select
-					id="projects"
-					{...contactFormValidator.inputProps.projects}
-					className="bg-gray-400 w-full h-12 rounded-xl px-4 pt-3 pb-4 md:h-13 md:text-lg appearance-none lg:h-16"
-					options={[
-						{
-							value: "casa",
-							label: "Casa",
-						},
-						{
-							value: "chalet",
-							label: "Chalet",
-						},
-						{
-							value: "cubiculo",
-							label: "Cubiculo",
-						},
-					]}
-				/>
-			</div>
-			<div className="flex flex-col lg:col-span-2 relative">
-				<label
-					htmlFor="message"
-					className="text-xl md:text-2xl md:py-2 lg:text-2xl"
-				>
-					Mensaje
-				</label>
+				<div className="relative">
+					<label
+						htmlFor="projects"
+						className="block text-sm font-semibold text-gray-700 mb-2"
+					>
+						Tipo de proyecto
+					</label>
+					<div className="relative">
+						<div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 z-10">
+							<Home className="w-5 h-5" />
+						</div>
+						<Select
+							id="projects"
+							name="projects"
+							options={[
+								{ value: "casa", label: "Casa Modular" },
+								{ value: "chalet", label: "Chalet" },
+								{ value: "cubiculo", label: "Cubículo" }
+							]}
+							className="w-full h-14 pl-12 pr-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#E89B33] focus:bg-white transition-all text-base appearance-none cursor-pointer"
+						/>
+					</div>
+				</div>
 
-				<Textarea
-					id="message"
-					{...contactFormValidator.inputProps.message}
-					placeholder="Cuentanos cual es tu presupuesto, zona de construccion, ubicacion y tamaño del lote y cualquier informacion relevante para que podámos darte la cotizacion más precisa posible!"
-					className="bg-gray-400 w-full mt-1 rounded-xl p-4 md:text-xl"
-					rows={4}
-				/>
+				<div className="relative">
+					<label
+						htmlFor="message"
+						className="block text-sm font-semibold text-gray-700 mb-2"
+					>
+						Mensaje
+					</label>
+					<div className="relative">
+						<div className="absolute left-4 top-4 text-gray-400">
+							<MessageSquare className="w-5 h-5" />
+						</div>
+						<Textarea
+							id="message"
+							name="message"
+							className="w-full min-h-35 pl-12 pr-4 pt-4 pb-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#E89B33] focus:bg-white transition-all text-base resize-none"
+							placeholder="Cuéntanos sobre tu proyecto..."
+						/>
+					</div>
+				</div>
+
+				<Button className="w-full h-14 bg-[#E89B33] hover:bg-[#d68a24] text-white font-semibold text-base rounded-xl transition-all">
+					Enviar solicitud
+				</Button>
+
+				<p className="text-sm text-gray-500 text-center">
+					Al enviar este formulario, aceptas que te contactemos sobre tu proyecto.
+				</p>
 			</div>
-			<button
-				type="submit"
-				disabled={formState.isSubmitPending}
-				className={`bg-[#355070] w-full rounded-xl text-white text-xl h-14 mt-2 md:h-20 md:text-3xl md:font-bold md:mt-4 lg:col-span-2 lg:text-3xl hover:opacity-95 ${
-					formState.isSubmitPending
-						? "opacity-50 cursor-not-allowed"
-						: ""
-				}`}
-			>
-				{formState.isSubmitPending ? "Enviando..." : "ENVIAR"}
-			</button>
-		</>
+		</div>
 	);
 };

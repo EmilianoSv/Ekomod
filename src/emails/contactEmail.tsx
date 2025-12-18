@@ -4,7 +4,6 @@ import {
 	Head,
 	Hr,
 	Html,
-	Img,
 	Preview,
 	Row,
 	Section,

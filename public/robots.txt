@@ -1,0 +1,11 @@
+# Robots.txt for Ekomod
+# https://ekomod.com.co
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ekomod.com.co/sitemap-index.xml
+
+# Disallow admin or private paths (if any)
+Disallow: /api/
