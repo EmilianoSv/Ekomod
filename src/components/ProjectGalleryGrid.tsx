@@ -8,10 +8,17 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
+type ImageMetadata = {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+};
+
 interface Project {
   title: string;
   description: string;
-  image: any;
+  image: ImageMetadata;
   category: string;
 }
 

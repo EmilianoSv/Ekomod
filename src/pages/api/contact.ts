@@ -1,20 +1,17 @@
-import { z } from "zod";
 import { contactFormValidator } from "../../components/_ContactForm";
 import { Resend } from "resend";
 import { ContactEmail } from "../../emails/contactEmail";
 import { render } from "@react-email/render";
 
-export async function POST(context: { request: { formData: () => any } }) {
+export async function POST(context: { request: { formData: () => Promise<FormData> } }) {
 	try {
 		const formData = await context.request.formData();
 
 		// Convert formData to an object
 		const formDataObject = Object.fromEntries(formData);
 
-		const schema = z.object(contactFormValidator.validator);
-
 		// Validate using Zod's safeParse method
-		const parsed = schema.safeParse(formDataObject);
+		const parsed = contactFormValidator.safeParse(formDataObject);
 		if (!parsed.success) {
 			return new Response(
 				JSON.stringify({ errors: parsed.error.flatten().fieldErrors }),
@@ -46,7 +43,7 @@ export async function POST(context: { request: { formData: () => any } }) {
 			plainText: true,
 		});
 
-		const { data, error } = await resend.emails.send({
+		const { data: _data, error } = await resend.emails.send({
 			from: "Web Ekomod <contacto@ekomod.com.co>",
 			to: ["Konstruct.soluciones@gmail.com"],
 			subject: parsed.data.name + " - " + parsed.data.projects,

@@ -10,9 +10,16 @@ interface House {
   subtitle: string;
   subtitle2?: string;
   color: string;
-  image: any;
+  image: ImageMetadata;
   alt: string;
 }
+
+type ImageMetadata = {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+};
 
 interface HousesCarouselProps {
   houses: House[];

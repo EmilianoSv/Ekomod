@@ -1,6 +1,6 @@
 import { c as createComponent, m as maybeRenderHead, r as renderComponent, d as addAttribute, b as renderScript, a as renderTemplate } from './astro/server_BaK1mv8C.mjs';
 import 'piccolore';
-import { a as $$Icon } from './Icon_CDn73aNP.mjs';
+import { a as $$Icon } from './Icon_D0TSKXmE.mjs';
 import { $ as $$Image } from './_astro_assets_LqZiRpet.mjs';
 import { jsx } from 'react/jsx-runtime';
 import { Mail, Phone, MapPin } from 'lucide-react';

@@ -56,7 +56,8 @@ export function Form({
 	context?: FormContextType;
 	fieldErrors?: FieldErrors;
 } & Omit<ComponentProps<"form">, "method" | "onSubmit">) {
-	const formContext = context ?? useCreateFormContext(validator, fieldErrors);
+	const internalContext = useCreateFormContext(validator, fieldErrors);
+	const formContext = context ?? internalContext;
 	const [sentSuccessfully, setSentSuccessfully] = useState(false);
 
 	return (
@@ -99,7 +100,7 @@ export function Form({
 										e.currentTarget.reset();
 									}
 								} else {
-									console.log(response);
+									console.error("Form submission failed:", response.status);
 								}
 
 								return;
@@ -149,11 +150,11 @@ export function Input(inputProps: ComponentProps<"input"> & { name: string }) {
 				}}
 				{...inputProps}
 			/>
-			{validationErrors?.length > 0 && (
+			{validationErrors && validationErrors.length > 0 && (
 				<p className="text-red-500 text-xs mt-1">
-					{validationErrors?.at(0) === "Required"
+					{validationErrors.at(0) === "Required"
 						? "Requerido"
-						: validationErrors?.at(0)}
+						: validationErrors.at(0)}
 				</p>
 			)}
 		</>
@@ -215,11 +216,11 @@ export function Select({
 					</option>
 				))}
 			</select>
-			{validationErrors?.length > 0 && (
+			{validationErrors && validationErrors.length > 0 && (
 				<p className="text-red-500 text-xs mt-1">
-					{validationErrors?.at(0) === "Required"
+					{validationErrors.at(0) === "Required"
 						? "Requerido"
-						: validationErrors?.at(0)}
+						: validationErrors.at(0)}
 				</p>
 			)}
 		</>
@@ -256,11 +257,11 @@ export function Textarea({
 					formContext.validateField(name, value, validator);
 				}}
 			/>
-			{validationErrors?.length > 0 && (
+			{validationErrors && validationErrors.length > 0 && (
 				<p className="text-red-500 text-xs mt-1">
-					{validationErrors?.at(0) === "Required"
+					{validationErrors.at(0) === "Required"
 						? "Requerido"
-						: validationErrors?.at(0)}
+						: validationErrors.at(0)}
 				</p>
 			)}
 		</>
