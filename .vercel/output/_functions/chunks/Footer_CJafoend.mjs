@@ -1,6 +1,6 @@
 import { c as createComponent, m as maybeRenderHead, r as renderComponent, b as renderScript, a as renderTemplate, d as addAttribute } from './astro/server_BaK1mv8C.mjs';
 import 'piccolore';
-import { a as $$Icon } from './Icon_CdguUSTV.mjs';
+import { a as $$Icon } from './Icon_DBagqWEU.mjs';
 /* empty css                           */
 import { $ as $$Image } from './_astro_assets_LqZiRpet.mjs';
 import { jsx } from 'react/jsx-runtime';
