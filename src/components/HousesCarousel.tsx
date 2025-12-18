@@ -37,7 +37,7 @@ export default function HousesCarousel({ houses }: HousesCarouselProps) {
   };
 
   const scrollToContact = () => {
-    document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const currentHouse = houses[currentIndex];

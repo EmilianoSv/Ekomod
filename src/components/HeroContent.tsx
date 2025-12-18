@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 
 export default function HeroContent() {
   const scrollToContact = () => {
-    document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToHouses = () => {
-    document.getElementById("houses")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("modelos")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
