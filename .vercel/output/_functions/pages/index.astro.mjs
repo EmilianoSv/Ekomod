@@ -1,14 +1,14 @@
 import { c as createComponent, m as maybeRenderHead, r as renderComponent, a as renderTemplate, b as renderScript } from '../chunks/astro/server_BaK1mv8C.mjs';
 import 'piccolore';
-import { a as $$Icon, $ as $$Layout } from '../chunks/Icon_CDn73aNP.mjs';
+import { a as $$Icon, $ as $$Layout } from '../chunks/Icon_DH-xMoPP.mjs';
 import { $ as $$Image } from '../chunks/_astro_assets_LqZiRpet.mjs';
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
-import { B as Button, a as cn, C as ContactForm } from '../chunks/_ContactForm_B6ty0RVV.mjs';
+import { B as Button, a as cn, C as ContactForm } from '../chunks/_ContactForm_VirPE25M.mjs';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import * as React from 'react';
 import { useRef, useState } from 'react';
 import { MessageSquare, Pencil, Hammer, Home, ChevronLeft, ChevronRight, Mail, Phone, MapPin, Clock, DollarSign, Truck, Leaf, X, ChevronDown } from 'lucide-react';
-import { $ as $$Footer } from '../chunks/Footer_DX_dgB8m.mjs';
+import { $ as $$Footer } from '../chunks/Footer_B4d38IDJ.mjs';
 /* empty css                                 */
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
@@ -29,10 +29,10 @@ const background = new Proxy({"src":"/_astro/background-hero-image.12FiSOto.png"
 
 function HeroContent() {
   const scrollToContact = () => {
-    document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
   };
   const scrollToHouses = () => {
-    document.getElementById("houses")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("modelos")?.scrollIntoView({ behavior: "smooth" });
   };
   return /* @__PURE__ */ jsx("div", { className: "w-full h-full flex items-center py-12 lg:py-0", children: /* @__PURE__ */ jsx("div", { className: "container mx-auto px-4 md:px-6 lg:px-8", children: /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center pt-6 lg:pt-8", children: [
     /* @__PURE__ */ jsxs("div", { className: "text-left space-y-10", children: [
@@ -165,7 +165,7 @@ function HeroContent() {
 }
 
 const $$HeroSection = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<section id="container" class="h-svh relative overflow-hidden"> <div class="absolute inset-0 bg-linear-to-b from-black/40 via-black/30 to-black/50 z-10"></div> <div class="w-full h-full absolute inset-0"> ${renderComponent($$result, "Image", $$Image, { "src": background, "alt": "casas-modulares", "format": "avif", "quality": "high", "class": "w-full h-full object-cover" })} </div> <div class="relative z-20 flex h-full items-center justify-center p-6 md:p-12 lg:p-20"> ${renderComponent($$result, "HeroContent", HeroContent, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/home/julio/workspace/Ekomod/src/components/HeroContent", "client:component-export": "default" })} </div> </section>`;
+  return renderTemplate`${maybeRenderHead()}<section id="inicio" class="h-svh relative overflow-hidden"> <div class="absolute inset-0 bg-linear-to-b from-black/40 via-black/30 to-black/50 z-10"></div> <div class="w-full h-full absolute inset-0"> ${renderComponent($$result, "Image", $$Image, { "src": background, "alt": "casas-modulares", "format": "avif", "quality": "high", "class": "w-full h-full object-cover" })} </div> <div class="relative z-20 flex h-full items-center justify-center p-6 md:p-12 lg:p-20"> ${renderComponent($$result, "HeroContent", HeroContent, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/home/julio/workspace/Ekomod/src/components/HeroContent", "client:component-export": "default" })} </div> </section>`;
 }, "/home/julio/workspace/Ekomod/src/components/HeroSection.astro", void 0);
 
 const Card = React.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
@@ -278,11 +278,11 @@ function WhyChooseUsSteps() {
 }
 
 const $$WhyChooseUs = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<section id="why-choose-us" class="py-20 md:py-32 bg-linear-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"> <!-- Decorative background elements --> <div class="absolute inset-0 opacity-5"> <div class="absolute top-0 left-0 w-96 h-96 bg-[#E89B33] rounded-full blur-3xl"></div> <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#6B8E23] rounded-full blur-3xl"></div> </div> <div class="container mx-auto px-4 md:px-6 relative z-10"> <div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto"> <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-linear-to-r from-[#E89B33] via-[#6B8E23] to-[#355070] bg-clip-text text-transparent">
+  return renderTemplate`${maybeRenderHead()}<section id="porque-elegirnos" class="py-20 md:py-32 bg-linear-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"> <!-- Decorative background elements --> <div class="absolute inset-0 opacity-5"> <div class="absolute top-0 left-0 w-96 h-96 bg-[#E89B33] rounded-full blur-3xl"></div> <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#6B8E23] rounded-full blur-3xl"></div> </div> <div class="container mx-auto px-4 md:px-6 relative z-10"> <div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto"> <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-linear-to-r from-[#E89B33] via-[#6B8E23] to-[#355070] bg-clip-text text-transparent">
 Así de fácil es tener tu casa modular
 </h2> <p class="text-xl md:text-2xl text-gray-600">
 Un proceso simple y transparente de principio a fin
-</p> </div> <div class="max-w-4xl mx-auto"> ${renderComponent($$result, "WhyChooseUsSteps", WhyChooseUsSteps, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/home/julio/workspace/Ekomod/src/components/WhyChooseUsSteps", "client:component-export": "default" })} </div> <!-- CTA Section --> <div class="mt-16 text-center"> <a href="#contact-us" class="inline-block px-12 py-4 bg-linear-to-r from-[#E89B33] to-[#6B8E23] text-white text-lg md:text-xl font-bold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer">
+</p> </div> <div class="max-w-4xl mx-auto"> ${renderComponent($$result, "WhyChooseUsSteps", WhyChooseUsSteps, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/home/julio/workspace/Ekomod/src/components/WhyChooseUsSteps", "client:component-export": "default" })} </div> <!-- CTA Section --> <div class="mt-16 text-center"> <a href="#contacto" class="inline-block px-12 py-4 bg-linear-to-r from-[#E89B33] to-[#6B8E23] text-white text-lg md:text-xl font-bold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer">
 Comienza tu proyecto hoy
 </a> </div> </div> </section>`;
 }, "/home/julio/workspace/Ekomod/src/components/WhyChooseUs.astro", void 0);
@@ -335,7 +335,7 @@ function HousesCarousel({ houses }) {
     setCurrentIndex((prev) => (prev - 1 + houses.length) % houses.length);
   };
   const scrollToContact = () => {
-    document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
   };
   const currentHouse = houses[currentIndex];
   return /* @__PURE__ */ jsxs("div", { className: "relative w-full h-screen overflow-hidden", children: [
@@ -466,47 +466,47 @@ const $$HousesSection = createComponent(($$result, $$props, $$slots) => {
       alt: "render-tipo-m"
     }
   ];
-  return renderTemplate`${maybeRenderHead()}<section id="houses" class="w-full"> ${renderComponent($$result, "HousesCarousel", HousesCarousel, { "houses": houses, "client:load": true, "client:component-hydration": "load", "client:component-path": "/home/julio/workspace/Ekomod/src/components/HousesCarousel", "client:component-export": "default" })} </section>`;
+  return renderTemplate`${maybeRenderHead()}<section id="modelos" class="w-full"> ${renderComponent($$result, "HousesCarousel", HousesCarousel, { "houses": houses, "client:load": true, "client:component-hydration": "load", "client:component-path": "/home/julio/workspace/Ekomod/src/components/HousesCarousel", "client:component-export": "default" })} </section>`;
 }, "/home/julio/workspace/Ekomod/src/components/HousesSection.astro", void 0);
 
 const $$ContactUs = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<section id="contact-us" class="py-20 md:py-32 bg-linear-to-br from-[#355070] via-[#2a4058] to-[#1f2f40] relative overflow-hidden"> <!-- Decorative elements --> <div class="absolute inset-0 opacity-10"> <div class="absolute top-10 right-10 w-72 h-72 bg-[#E89B33] rounded-full blur-3xl"></div> <div class="absolute bottom-10 left-10 w-96 h-96 bg-[#6B8E23] rounded-full blur-3xl"></div> </div> <div class="container mx-auto px-4 md:px-6 relative z-10"> <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start"> <!-- Left side - Info --> <div class="text-white space-y-8 lg:col-span-2"> <div> <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+  return renderTemplate`${maybeRenderHead()}<section id="contacto" class="py-20 md:py-32 bg-linear-to-br from-[#355070] via-[#2a4058] to-[#1f2f40] relative overflow-hidden"> <!-- Decorative elements --> <div class="absolute inset-0 opacity-10"> <div class="absolute top-10 right-10 w-72 h-72 bg-[#E89B33] rounded-full blur-3xl"></div> <div class="absolute bottom-10 left-10 w-96 h-96 bg-[#6B8E23] rounded-full blur-3xl"></div> </div> <div class="container mx-auto px-4 md:px-6 relative z-10"> <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 items-start"> <!-- Left side - Info --> <div class="text-white space-y-8 lg:col-span-2"> <div> <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
 ¿Listo para comenzar?
 </h2> <p class="text-xl md:text-2xl text-white/80">
 Cuéntanos sobre tu proyecto y te ayudaremos a hacerlo realidad
-</p> </div> <div class="space-y-6"> <div class="flex items-start gap-4"> <div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0"> ${renderComponent($$result, "Mail", Mail, { "class": "w-6 h-6 text-[#E89B33]" })} </div> <div> <h3 class="font-semibold text-lg mb-1">Email</h3> <a href="mailto:konstruct.soluciones@gmail.com" class="text-white/80 hover:text-white transition-colors">
+</p> </div> <div class="space-y-6"> <div class="flex items-start gap-4"> <div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0"> ${renderComponent($$result, "Mail", Mail, { "className": "w-6 h-6 text-[#E89B33]" })} </div> <div> <h3 class="font-semibold text-lg mb-1">Email</h3> <a href="mailto:konstruct.soluciones@gmail.com" class="text-white/80 hover:text-white transition-colors">
 konstruct.soluciones@gmail.com
-</a> </div> </div> <div class="flex items-start gap-4"> <div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0"> ${renderComponent($$result, "Phone", Phone, { "class": "w-6 h-6 text-[#6B8E23]" })} </div> <div> <h3 class="font-semibold text-lg mb-1">Teléfono</h3> <a href="tel:+573244270277" class="text-white/80 hover:text-white transition-colors">
+</a> </div> </div> <div class="flex items-start gap-4"> <div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0"> ${renderComponent($$result, "Phone", Phone, { "className": "w-6 h-6 text-[#6B8E23]" })} </div> <div> <h3 class="font-semibold text-lg mb-1">Teléfono</h3> <a href="tel:+573244270277" class="text-white/80 hover:text-white transition-colors">
 (+57) 324 4270277
-</a> </div> </div> <div class="flex items-start gap-4"> <div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0"> ${renderComponent($$result, "MapPin", MapPin, { "class": "w-6 h-6 text-[#E89B33]" })} </div> <div> <h3 class="font-semibold text-lg mb-1">Ubicación</h3> <p class="text-white/80">
+</a> </div> </div> <div class="flex items-start gap-4"> <div class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center shrink-0"> ${renderComponent($$result, "MapPin", MapPin, { "className": "w-6 h-6 text-[#E89B33]" })} </div> <div> <h3 class="font-semibold text-lg mb-1">Ubicación</h3> <p class="text-white/80">
 Colombia
 </p> </div> </div> </div> <div class="pt-8"> <h3 class="font-semibold text-lg mb-4">Horario de atención</h3> <p class="text-white/80">Lunes a Viernes: 8:00 AM - 6:00 PM</p> <p class="text-white/80">Sábados: 9:00 AM - 2:00 PM</p> </div> </div> <!-- Right side - Form --> <div class="bg-white rounded-2xl shadow-2xl p-8 md:p-10 lg:col-span-3"> ${renderComponent($$result, "ContactForm", ContactForm, { "client:load": true, "client:component-hydration": "load", "client:component-path": "/home/julio/workspace/Ekomod/src/components/_ContactForm", "client:component-export": "ContactForm" })} </div> </div> </div> </section>`;
 }, "/home/julio/workspace/Ekomod/src/components/ContactUs.astro", void 0);
 
 const $$Navbar = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<header id="navbar" class="h-20 w-full bg-white/95 fixed top-0 transition-all duration-300 z-50 backdrop-blur-md border-b border-gray-100" data-astro-cid-5blmo7yk> <div class="container mx-auto px-4 md:px-6 h-full flex items-center justify-between" data-astro-cid-5blmo7yk> <a href="#" class="flex items-center gap-3 group" id="logo-link" data-astro-cid-5blmo7yk> ${renderComponent($$result, "Icon", $$Icon, { "name": "ekomod-logo", "class": "w-10 h-10 md:w-12 md:h-12 transition-transform group-hover:scale-105", "data-astro-cid-5blmo7yk": true })} <span class="text-2xl font-black md:text-3xl bg-gradient-to-r from-[#355070] to-[#2a4058] bg-clip-text text-transparent group-hover:from-[#E89B33] group-hover:to-[#6B8E23] transition-all duration-300" data-astro-cid-5blmo7yk>
+  return renderTemplate`${maybeRenderHead()}<header id="navbar" class="h-20 w-full bg-white/95 fixed top-0 transition-all duration-300 z-50 backdrop-blur-md border-b border-gray-100" data-astro-cid-5blmo7yk> <div class="container mx-auto px-4 md:px-6 h-full flex items-center justify-between" data-astro-cid-5blmo7yk> <a href="#" class="flex items-center gap-3 group" id="logo-link" data-astro-cid-5blmo7yk> ${renderComponent($$result, "Icon", $$Icon, { "name": "ekomod-logo", "class": "w-10 h-10 md:w-12 md:h-12 transition-transform group-hover:scale-105", "data-astro-cid-5blmo7yk": true })} <span class="text-2xl font-black md:text-3xl bg-linear-to-r from-[#355070] to-[#2a4058] bg-clip-text text-transparent group-hover:from-[#E89B33] group-hover:to-[#6B8E23] transition-all duration-300" data-astro-cid-5blmo7yk>
 EKOMOD
-</span> </a> <!-- Desktop navigation --> <nav class="hidden md:flex items-center gap-2 lg:gap-4" data-astro-cid-5blmo7yk> <a href="#container" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group" data-astro-cid-5blmo7yk>
+</span> </a> <!-- Desktop navigation --> <nav class="hidden md:flex items-center gap-2 lg:gap-4" data-astro-cid-5blmo7yk> <a href="#inicio" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group" data-astro-cid-5blmo7yk>
 Inicio
-<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full" data-astro-cid-5blmo7yk></span> </a> <a href="#houses" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group" data-astro-cid-5blmo7yk>
+<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full" data-astro-cid-5blmo7yk></span> </a> <a href="#modelos" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group" data-astro-cid-5blmo7yk>
 Modelos
-<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full" data-astro-cid-5blmo7yk></span> </a> <a href="#gallery" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group" data-astro-cid-5blmo7yk>
+<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full" data-astro-cid-5blmo7yk></span> </a> <a href="#galeria" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group" data-astro-cid-5blmo7yk>
 Galería
-<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full" data-astro-cid-5blmo7yk></span> </a> <a href="#faq" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group" data-astro-cid-5blmo7yk>
+<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full" data-astro-cid-5blmo7yk></span> </a> <a href="#faq" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group" data-astro-cid-5blmo7yk>
 FAQ
-<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full" data-astro-cid-5blmo7yk></span> </a> <a href="#contact-us" class="ml-2 px-6 py-2.5 bg-gradient-to-r from-[#355070] to-[#2a4058] text-white rounded-xl font-semibold hover:from-[#E89B33] hover:to-[#d68a24] transition-all duration-300 hover:shadow-lg hover:shadow-[#E89B33]/25 hover:scale-105" data-astro-cid-5blmo7yk>
+<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full" data-astro-cid-5blmo7yk></span> </a> <a href="#contacto" class="ml-2 px-6 py-2.5 bg-linear-to-r from-[#355070] to-[#2a4058] text-white rounded-xl font-semibold hover:from-[#E89B33] hover:to-[#d68a24] transition-all duration-300 hover:shadow-lg hover:shadow-[#E89B33]/25 hover:scale-105" data-astro-cid-5blmo7yk>
 Contacto
-</a> </nav> <!-- Mobile hamburger button --> <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-[#355070] transition-colors rounded-lg hover:bg-gray-100" aria-label="Abrir menú" data-astro-cid-5blmo7yk> <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-5blmo7yk> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-5blmo7yk></path> </svg> </button> </div> </header> <!-- Full-screen mobile menu overlay --> <div id="mobile-menu" class="fixed inset-0 bg-gradient-to-br from-[#355070] via-[#2a4058] to-[#1f2f40] z-[100] hidden md:hidden transition-opacity duration-300 overflow-hidden" data-astro-cid-5blmo7yk> <!-- Decorative background elements --> <div class="absolute inset-0 overflow-hidden pointer-events-none" data-astro-cid-5blmo7yk> <div class="absolute bottom-20 left-10 w-40 h-40 bg-[#E89B33] rounded-full blur-3xl opacity-20" data-astro-cid-5blmo7yk></div> <div class="absolute top-32 right-10 w-32 h-32 bg-[#6B8E23] rounded-full blur-3xl opacity-20" data-astro-cid-5blmo7yk></div> <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white rounded-full blur-3xl opacity-5" data-astro-cid-5blmo7yk></div> </div> <div class="flex flex-col h-full relative z-10" data-astro-cid-5blmo7yk> <!-- Header with logo and close button --> <div class="flex items-center justify-between p-4 h-20" data-astro-cid-5blmo7yk> <div class="flex items-center gap-3" data-astro-cid-5blmo7yk> ${renderComponent($$result, "Icon", $$Icon, { "name": "ekomod-logo", "class": "w-10 h-10", "data-astro-cid-5blmo7yk": true })} <span class="text-2xl font-black bg-gradient-to-r from-[#E89B33] to-[#6B8E23] bg-clip-text text-transparent" data-astro-cid-5blmo7yk>
+</a> </nav> <!-- Mobile hamburger button --> <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-700 hover:text-[#355070] transition-colors rounded-lg hover:bg-gray-100" aria-label="Abrir menú" data-astro-cid-5blmo7yk> <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-5blmo7yk> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" data-astro-cid-5blmo7yk></path> </svg> </button> </div> </header> <!-- Full-screen mobile menu overlay --> <div id="mobile-menu" class="fixed inset-0 bg-linear-to-br from-[#355070] via-[#2a4058] to-[#1f2f40] z-100 hidden md:hidden transition-opacity duration-300 overflow-hidden" data-astro-cid-5blmo7yk> <!-- Decorative background elements --> <div class="absolute inset-0 overflow-hidden pointer-events-none" data-astro-cid-5blmo7yk> <div class="absolute bottom-20 left-10 w-40 h-40 bg-[#E89B33] rounded-full blur-3xl opacity-20" data-astro-cid-5blmo7yk></div> <div class="absolute top-32 right-10 w-32 h-32 bg-[#6B8E23] rounded-full blur-3xl opacity-20" data-astro-cid-5blmo7yk></div> <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white rounded-full blur-3xl opacity-5" data-astro-cid-5blmo7yk></div> </div> <div class="flex flex-col h-full relative z-10" data-astro-cid-5blmo7yk> <!-- Header with logo and close button --> <div class="flex items-center justify-between p-4 h-20" data-astro-cid-5blmo7yk> <div class="flex items-center gap-3" data-astro-cid-5blmo7yk> ${renderComponent($$result, "Icon", $$Icon, { "name": "ekomod-logo", "class": "w-10 h-10", "data-astro-cid-5blmo7yk": true })} <span class="text-2xl font-black bg-linear-to-r from-[#E89B33] to-[#6B8E23] bg-clip-text text-transparent" data-astro-cid-5blmo7yk>
 EKOMOD
-</span> </div> <button id="mobile-menu-close" class="p-2 text-white/80 hover:text-white hover:bg-white/10 transition-all rounded-lg" aria-label="Cerrar menú" data-astro-cid-5blmo7yk> <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-5blmo7yk> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" data-astro-cid-5blmo7yk></path> </svg> </button> </div> <!-- Navigation links - large and touch-friendly --> <nav class="flex-1 flex flex-col items-center justify-center gap-6 px-6" data-astro-cid-5blmo7yk> <a href="#container" class="mobile-nav-link text-2xl text-white/90 font-semibold hover:text-[#E89B33] transition-all py-2 px-6 rounded-xl hover:bg-white/5" data-astro-cid-5blmo7yk>
+</span> </div> <button id="mobile-menu-close" class="p-2 text-white/80 hover:text-white hover:bg-white/10 transition-all rounded-lg" aria-label="Cerrar menú" data-astro-cid-5blmo7yk> <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" data-astro-cid-5blmo7yk> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" data-astro-cid-5blmo7yk></path> </svg> </button> </div> <!-- Navigation links - large and touch-friendly --> <nav class="flex-1 flex flex-col items-center justify-center gap-6 px-6" data-astro-cid-5blmo7yk> <a href="#inicio" class="mobile-nav-link text-2xl text-white/90 font-semibold hover:text-[#E89B33] transition-all py-2 px-6 rounded-xl hover:bg-white/5" data-astro-cid-5blmo7yk>
 Inicio
-</a> <a href="#houses" class="mobile-nav-link text-2xl text-white/90 font-semibold hover:text-[#E89B33] transition-all py-2 px-6 rounded-xl hover:bg-white/5" data-astro-cid-5blmo7yk>
+</a> <a href="#modelos" class="mobile-nav-link text-2xl text-white/90 font-semibold hover:text-[#E89B33] transition-all py-2 px-6 rounded-xl hover:bg-white/5" data-astro-cid-5blmo7yk>
 Modelos
-</a> <a href="#gallery" class="mobile-nav-link text-2xl text-white/90 font-semibold hover:text-[#E89B33] transition-all py-2 px-6 rounded-xl hover:bg-white/5" data-astro-cid-5blmo7yk>
+</a> <a href="#galeria" class="mobile-nav-link text-2xl text-white/90 font-semibold hover:text-[#E89B33] transition-all py-2 px-6 rounded-xl hover:bg-white/5" data-astro-cid-5blmo7yk>
 Galería
 </a> <a href="#faq" class="mobile-nav-link text-2xl text-white/90 font-semibold hover:text-[#E89B33] transition-all py-2 px-6 rounded-xl hover:bg-white/5" data-astro-cid-5blmo7yk>
 FAQ
-</a> <a href="#contact-us" class="mobile-nav-link mt-4 px-10 py-4 bg-gradient-to-r from-[#E89B33] to-[#d68a24] text-white rounded-xl text-xl font-bold hover:shadow-lg hover:shadow-[#E89B33]/30 transition-all" data-astro-cid-5blmo7yk>
+</a> <a href="#contacto" class="mobile-nav-link mt-4 px-10 py-4 bg-linear-to-r from-[#E89B33] to-[#d68a24] text-white rounded-xl text-xl font-bold hover:shadow-lg hover:shadow-[#E89B33]/30 transition-all" data-astro-cid-5blmo7yk>
 Contacto
 </a> </nav> <!-- Bottom info --> <div class="p-6 text-center" data-astro-cid-5blmo7yk> <p class="text-white/40 text-sm" data-astro-cid-5blmo7yk>Casas modulares sostenibles</p> </div> </div> </div> ${renderScript($$result, "/home/julio/workspace/Ekomod/src/components/Navbar.astro?astro&type=script&index=0&lang.ts")} `;
 }, "/home/julio/workspace/Ekomod/src/components/Navbar.astro", void 0);
@@ -704,7 +704,7 @@ function ProjectGalleryGrid({ projects }) {
           {
             onClick: () => {
               setSelectedProject(null);
-              document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
+              document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
             },
             className: "flex-1 px-6 py-3 bg-linear-to-r from-[#E89B33] to-[#6B8E23] text-white rounded-lg font-semibold hover:opacity-90 transition-all cursor-pointer",
             children: "Solicitar cotización"
@@ -744,7 +744,7 @@ const $$ProjectGallery = createComponent(($$result, $$props, $$slots) => {
       category: "Modular"
     }
   ];
-  return renderTemplate`${maybeRenderHead()}<section id="gallery" class="py-20 md:py-32 bg-white"> <div class="container mx-auto px-4 md:px-6"> <div class="text-center mb-12 md:mb-16"> <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+  return renderTemplate`${maybeRenderHead()}<section id="galeria" class="py-20 md:py-32 bg-white"> <div class="container mx-auto px-4 md:px-6"> <div class="text-center mb-12 md:mb-16"> <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
 Nuestros Proyectos
 </h2> <p class="text-xl text-gray-600 max-w-2xl mx-auto">
 Explora nuestra gama de casas modulares diseñadas para adaptarse a tus necesidades

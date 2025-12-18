@@ -9,32 +9,32 @@ import { Icon } from "astro-icon/components";
 	<div class="container mx-auto px-4 md:px-6 h-full flex items-center justify-between">
 		<a href="#" class="flex items-center gap-3 group" id="logo-link">
 			<Icon name="ekomod-logo" class="w-10 h-10 md:w-12 md:h-12 transition-transform group-hover:scale-105" />
-			<span class="text-2xl font-black md:text-3xl bg-gradient-to-r from-[#355070] to-[#2a4058] bg-clip-text text-transparent group-hover:from-[#E89B33] group-hover:to-[#6B8E23] transition-all duration-300">
+			<span class="text-2xl font-black md:text-3xl bg-linear-to-r from-[#355070] to-[#2a4058] bg-clip-text text-transparent group-hover:from-[#E89B33] group-hover:to-[#6B8E23] transition-all duration-300">
 				EKOMOD
 			</span>
 		</a>
 
 		<!-- Desktop navigation -->
 		<nav class="hidden md:flex items-center gap-2 lg:gap-4">
-			<a href="#container" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group">
+			<a href="#inicio" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group">
 				Inicio
-				<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
+				<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
 			</a>
-			<a href="#houses" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group">
+			<a href="#modelos" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group">
 				Modelos
-				<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
+				<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
 			</a>
-			<a href="#gallery" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group">
+			<a href="#galeria" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group">
 				Galería
-				<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
+				<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
 			</a>
 			<a href="#faq" class="nav-link relative px-4 py-2 text-gray-600 hover:text-[#355070] font-medium transition-colors group">
 				FAQ
-				<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
+				<span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-[#E89B33] to-[#6B8E23] group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
 			</a>
 			<a
-				href="#contact-us"
-				class="ml-2 px-6 py-2.5 bg-gradient-to-r from-[#355070] to-[#2a4058] text-white rounded-xl font-semibold hover:from-[#E89B33] hover:to-[#d68a24] transition-all duration-300 hover:shadow-lg hover:shadow-[#E89B33]/25 hover:scale-105"
+				href="#contacto"
+				class="ml-2 px-6 py-2.5 bg-linear-to-r from-[#355070] to-[#2a4058] text-white rounded-xl font-semibold hover:from-[#E89B33] hover:to-[#d68a24] transition-all duration-300 hover:shadow-lg hover:shadow-[#E89B33]/25 hover:scale-105"
 			>
 				Contacto
 			</a>
@@ -56,7 +56,7 @@ import { Icon } from "astro-icon/components";
 <!-- Full-screen mobile menu overlay -->
 <div
 	id="mobile-menu"
-	class="fixed inset-0 bg-gradient-to-br from-[#355070] via-[#2a4058] to-[#1f2f40] z-[100] hidden md:hidden transition-opacity duration-300 overflow-hidden"
+	class="fixed inset-0 bg-linear-to-br from-[#355070] via-[#2a4058] to-[#1f2f40] z-100 hidden md:hidden transition-opacity duration-300 overflow-hidden"
 >
 	<!-- Decorative background elements -->
 	<div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -70,7 +70,7 @@ import { Icon } from "astro-icon/components";
 		<div class="flex items-center justify-between p-4 h-20">
 			<div class="flex items-center gap-3">
 				<Icon name="ekomod-logo" class="w-10 h-10" />
-				<span class="text-2xl font-black bg-gradient-to-r from-[#E89B33] to-[#6B8E23] bg-clip-text text-transparent">
+				<span class="text-2xl font-black bg-linear-to-r from-[#E89B33] to-[#6B8E23] bg-clip-text text-transparent">
 					EKOMOD
 				</span>
 			</div>
@@ -88,19 +88,19 @@ import { Icon } from "astro-icon/components";
 		<!-- Navigation links - large and touch-friendly -->
 		<nav class="flex-1 flex flex-col items-center justify-center gap-6 px-6">
 			<a
-				href="#container"
+				href="#inicio"
 				class="mobile-nav-link text-2xl text-white/90 font-semibold hover:text-[#E89B33] transition-all py-2 px-6 rounded-xl hover:bg-white/5"
 			>
 				Inicio
 			</a>
 			<a
-				href="#houses"
+				href="#modelos"
 				class="mobile-nav-link text-2xl text-white/90 font-semibold hover:text-[#E89B33] transition-all py-2 px-6 rounded-xl hover:bg-white/5"
 			>
 				Modelos
 			</a>
 			<a
-				href="#gallery"
+				href="#galeria"
 				class="mobile-nav-link text-2xl text-white/90 font-semibold hover:text-[#E89B33] transition-all py-2 px-6 rounded-xl hover:bg-white/5"
 			>
 				Galería
@@ -112,8 +112,8 @@ import { Icon } from "astro-icon/components";
 				FAQ
 			</a>
 			<a
-				href="#contact-us"
-				class="mobile-nav-link mt-4 px-10 py-4 bg-gradient-to-r from-[#E89B33] to-[#d68a24] text-white rounded-xl text-xl font-bold hover:shadow-lg hover:shadow-[#E89B33]/30 transition-all"
+				href="#contacto"
+				class="mobile-nav-link mt-4 px-10 py-4 bg-linear-to-r from-[#E89B33] to-[#d68a24] text-white rounded-xl text-xl font-bold hover:shadow-lg hover:shadow-[#E89B33]/30 transition-all"
 			>
 				Contacto
 			</a>
@@ -182,7 +182,7 @@ import { Icon } from "astro-icon/components";
 
 	// Smooth scroll for desktop nav links
 	document.querySelectorAll('.nav-link, a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function (e) {
+		anchor.addEventListener('click', function (this: HTMLElement, e) {
 			const href = this.getAttribute('href');
 			if (href && href.startsWith('#') && !this.classList.contains('mobile-nav-link')) {
 				e.preventDefault();

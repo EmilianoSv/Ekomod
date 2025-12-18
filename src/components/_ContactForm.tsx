@@ -2,6 +2,7 @@ import { Form, Input, Select, Textarea, useFormContext } from "./Form";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Mail, User, Phone as PhoneIcon, MessageSquare, Home } from "lucide-react";
+import type { FormValidator } from "simple:form";
 
 export const contactFormValidator = z.object({
 	name: z
@@ -21,7 +22,7 @@ export const contactFormValidator = z.object({
 		.string()
 		.min(5, "El teléfono es requerido.")
 		.regex(
-			/^[\d\+\(\)\-\s]+$/,
+			/^[\d+()-\s]+$/,
 			"El teléfono solo debe contener números y caracteres válidos."
 		),
 
@@ -42,14 +43,14 @@ export const contactFormValidator = z.object({
 export function ContactForm() {
 	return (
 		<>
-			<Form validator={contactFormValidator}>
+			<Form validator={contactFormValidator as unknown as FormValidator}>
 				<FormContent />
 			</Form>
 		</>
 	);
 }
 const FormContent = () => {
-	const { value: formState } = useFormContext();
+	const { value: _formState } = useFormContext();
 	return (
 		<div className="space-y-8 max-w-2xl mx-auto">
 			<div className="text-center mb-10">

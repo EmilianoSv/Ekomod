@@ -1,5 +1,4 @@
-import { z } from 'zod';
-import { c as contactFormValidator } from '../../chunks/_ContactForm_B6ty0RVV.mjs';
+import { c as contactFormValidator } from '../../chunks/_ContactForm_VirPE25M.mjs';
 import { Resend } from 'resend';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { Html, Head, Body, Preview, Container, Section, Row, Text, Hr } from '@react-email/components';
@@ -117,8 +116,7 @@ async function POST(context) {
   try {
     const formData = await context.request.formData();
     const formDataObject = Object.fromEntries(formData);
-    const schema = z.object(contactFormValidator.validator);
-    const parsed = schema.safeParse(formDataObject);
+    const parsed = contactFormValidator.safeParse(formDataObject);
     if (!parsed.success) {
       return new Response(
         JSON.stringify({ errors: parsed.error.flatten().fieldErrors }),
@@ -145,7 +143,7 @@ async function POST(context) {
     const text = await render(emailContent, {
       plainText: true
     });
-    const { data, error } = await resend.emails.send({
+    const { data: _data, error } = await resend.emails.send({
       from: "Web Ekomod <contacto@ekomod.com.co>",
       to: ["Konstruct.soluciones@gmail.com"],
       subject: parsed.data.name + " - " + parsed.data.projects,

@@ -8,10 +8,17 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
+type ImageMetadata = {
+  src: string;
+  width: number;
+  height: number;
+  format: string;
+};
+
 interface Project {
   title: string;
   description: string;
-  image: any;
+  image: ImageMetadata;
   category: string;
 }
 
@@ -80,7 +87,7 @@ export default function ProjectGalleryGrid({ projects }: ProjectGalleryGridProps
                 <button
                   onClick={() => {
                     setSelectedProject(null);
-                    document.getElementById("contact-us")?.scrollIntoView({ behavior: "smooth" });
+                    document.getElementById("contacto")?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="flex-1 px-6 py-3 bg-linear-to-r from-[#E89B33] to-[#6B8E23] text-white rounded-lg font-semibold hover:opacity-90 transition-all cursor-pointer"
                 >

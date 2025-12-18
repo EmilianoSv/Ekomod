@@ -51,7 +51,8 @@ function Form({
   name,
   ...formProps
 }) {
-  const formContext = context ?? useCreateFormContext(validator, fieldErrors);
+  const internalContext = useCreateFormContext(validator, fieldErrors);
+  const formContext = context ?? internalContext;
   const [sentSuccessfully, setSentSuccessfully] = useState(false);
   return /* @__PURE__ */ jsx(Fragment, { children: sentSuccessfully ? /* @__PURE__ */ jsx(MessageSucceeded, {}) : /* @__PURE__ */ jsx(FormContext.Provider, { value: formContext, children: /* @__PURE__ */ jsxs(
     "form",
@@ -85,7 +86,7 @@ function Form({
               e.currentTarget.reset();
             }
           } else {
-            console.log(response);
+            console.error("Form submission failed:", response.status);
           }
           return;
         }
@@ -127,7 +128,7 @@ function Input(inputProps) {
         ...inputProps
       }
     ),
-    validationErrors?.length > 0 && /* @__PURE__ */ jsx("p", { className: "text-red-500 text-xs mt-1", children: validationErrors?.at(0) === "Required" ? "Requerido" : validationErrors?.at(0) })
+    validationErrors && validationErrors.length > 0 && /* @__PURE__ */ jsx("p", { className: "text-red-500 text-xs mt-1", children: validationErrors.at(0) === "Required" ? "Requerido" : validationErrors.at(0) })
   ] });
 }
 function Select({
@@ -167,7 +168,7 @@ function Select({
         ]
       }
     ),
-    validationErrors?.length > 0 && /* @__PURE__ */ jsx("p", { className: "text-red-500 text-xs mt-1", children: validationErrors?.at(0) === "Required" ? "Requerido" : validationErrors?.at(0) })
+    validationErrors && validationErrors.length > 0 && /* @__PURE__ */ jsx("p", { className: "text-red-500 text-xs mt-1", children: validationErrors.at(0) === "Required" ? "Requerido" : validationErrors.at(0) })
   ] });
 }
 function Textarea({
@@ -198,7 +199,7 @@ function Textarea({
         }
       }
     ),
-    validationErrors?.length > 0 && /* @__PURE__ */ jsx("p", { className: "text-red-500 text-xs mt-1", children: validationErrors?.at(0) === "Required" ? "Requerido" : validationErrors?.at(0) })
+    validationErrors && validationErrors.length > 0 && /* @__PURE__ */ jsx("p", { className: "text-red-500 text-xs mt-1", children: validationErrors.at(0) === "Required" ? "Requerido" : validationErrors.at(0) })
   ] });
 }
 const MessageSucceeded = () => {
@@ -276,7 +277,7 @@ const contactFormValidator = z.object({
   ),
   email: z.string().email("El email no es válido").min(1, "El email es requerido."),
   phone: z.string().min(5, "El teléfono es requerido.").regex(
-    /^[\d\+\(\)\-\s]+$/,
+    /^[\d+()-\s]+$/,
     "El teléfono solo debe contener números y caracteres válidos."
   ),
   projects: z.string().min(1, "El proyecto es requerido.").regex(
@@ -289,7 +290,7 @@ function ContactForm() {
   return /* @__PURE__ */ jsx(Fragment, { children: /* @__PURE__ */ jsx(Form, { validator: contactFormValidator, children: /* @__PURE__ */ jsx(FormContent, {}) }) });
 }
 const FormContent = () => {
-  const { value: formState } = useFormContext();
+  const { value: _formState } = useFormContext();
   return /* @__PURE__ */ jsxs("div", { className: "space-y-8 max-w-2xl mx-auto", children: [
     /* @__PURE__ */ jsxs("div", { className: "text-center mb-10", children: [
       /* @__PURE__ */ jsx("h3", { className: "text-3xl md:text-4xl font-bold text-gray-900 mb-3", children: "Solicita tu cotización" }),

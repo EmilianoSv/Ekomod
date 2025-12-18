@@ -101,7 +101,7 @@ const container = {
 	maxWidth: "100%",
 };
 
-const userImage = {
+const _userImage = {
 	margin: "0 auto",
 	marginBottom: "16px",
 	borderRadius: "0%",
@@ -127,7 +127,7 @@ const review = {
 	borderRadius: "4px",
 };
 
-const button = {
+const _button = {
 	backgroundColor: "#ff5a5f",
 	borderRadius: "3px",
 	color: "#fff",
@@ -138,13 +138,13 @@ const button = {
 	display: "block",
 };
 
-const link = {
+const _link = {
 	...paragraph,
 	color: "#ff5a5f",
 	display: "block",
 };
 
-const reportLink = {
+const _reportLink = {
 	fontSize: "14px",
 	color: "#9ca299",
 	textDecoration: "underline",
