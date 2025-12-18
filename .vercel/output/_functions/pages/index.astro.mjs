@@ -1,6 +1,6 @@
 import { c as createComponent, m as maybeRenderHead, r as renderComponent, a as renderTemplate } from '../chunks/astro/server_BaK1mv8C.mjs';
 import 'piccolore';
-import { $ as $$Layout } from '../chunks/Icon_DBagqWEU.mjs';
+import { $ as $$Layout } from '../chunks/Icon_AGNatuuD.mjs';
 import { $ as $$Image } from '../chunks/_astro_assets_LqZiRpet.mjs';
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { B as Button, a as cn, C as ContactForm } from '../chunks/_ContactForm_B6ty0RVV.mjs';
@@ -8,7 +8,7 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import * as React from 'react';
 import { useRef, useState } from 'react';
 import { MessageSquare, Pencil, Hammer, Home, ChevronLeft, ChevronRight, Mail, Phone, MapPin, Clock, DollarSign, Truck, Leaf, X, ChevronDown } from 'lucide-react';
-import { $ as $$Navbar, a as $$Footer } from '../chunks/Footer_CJafoend.mjs';
+import { $ as $$Navbar, a as $$Footer } from '../chunks/Footer_BFH0d66F.mjs';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 export { renderers } from '../renderers.mjs';
