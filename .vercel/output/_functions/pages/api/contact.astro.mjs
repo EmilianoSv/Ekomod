@@ -125,7 +125,7 @@ async function POST(context) {
     );
   }
   console.log("MAIL ENVIADO!");
-  const resend = new Resend("re_Tg4qxrnn_FSkkWVSuMxihLMPpBvR4A6WC");
+  const resend = new Resend(process.env.RESEND_API_KEY);
   const emailContent = ContactEmail({
     authorName: parsed.data.name,
     authorEmail: parsed.data.email,

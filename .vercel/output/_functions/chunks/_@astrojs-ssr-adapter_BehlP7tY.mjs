@@ -13,6 +13,7 @@ import { N as NOOP_MIDDLEWARE_FN } from './noop-middleware_BzE_mJVT.mjs';
 import '@vercel/routing-utils';
 import 'deterministic-object-hash';
 import nodePath from 'node:path';
+import { builtinModules } from 'node:module';
 
 function createI18nMiddleware(i18n, base, trailingSlash, format) {
   if (!i18n) return (_, next) => next();
@@ -1416,6 +1417,10 @@ function getRequestSocket(req) {
 apply();
 
 nodePath.posix.join;
+
+new RegExp(
+  builtinModules.map((mod) => `(^${mod}$|^node:${mod}$)`).join("|")
+);
 
 const ASTRO_PATH_HEADER = "x-astro-path";
 const ASTRO_PATH_PARAM = "x_astro_path";
