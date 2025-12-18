@@ -4,33 +4,183 @@ import { Icon } from "astro-icon/components";
 
 <header
 	id="navbar"
-	class="h-20 w-full flex bg-[#ffffff52] fixed top-0 transition-all duration-400 z-50 backdrop-blur-xs"
+	class="h-20 w-full bg-white/90 fixed top-0 transition-all duration-300 z-50 backdrop-blur-md shadow-sm"
 >
-	<div class="m-auto flex gap-3">
-		<Icon name="ekomod-logo" class="md:w-12 md:h-12" />
-		<span class="text-black text-2xl content-center font-bold md:text-4xl"
-			>EKOMOD</span
+	<div class="container mx-auto px-4 md:px-6 h-full flex items-center justify-between">
+		<a href="#" class="flex items-center gap-3 hover:opacity-80 transition-opacity" id="logo-link">
+			<Icon name="ekomod-logo" class="w-10 h-10 md:w-12 md:h-12" />
+			<span class="text-gray-900 text-2xl font-bold md:text-3xl">EKOMOD</span>
+		</a>
+
+		<!-- Desktop navigation -->
+		<nav class="hidden md:flex items-center gap-8">
+			<a href="#container" class="nav-link text-gray-700 hover:text-[#355070] font-medium transition-colors">
+				Inicio
+			</a>
+			<a href="#houses" class="nav-link text-gray-700 hover:text-[#355070] font-medium transition-colors">
+				Modelos
+			</a>
+			<a href="#gallery" class="nav-link text-gray-700 hover:text-[#355070] font-medium transition-colors">
+				Galería
+			</a>
+			<a href="#faq" class="nav-link text-gray-700 hover:text-[#355070] font-medium transition-colors">
+				FAQ
+			</a>
+			<a
+				href="#contact-us"
+				class="px-6 py-2.5 bg-[#355070] text-white rounded-lg font-semibold hover:bg-[#355070]/90 transition-all hover:shadow-md"
+			>
+				Contacto
+			</a>
+		</nav>
+
+		<!-- Mobile hamburger button -->
+		<button
+			id="mobile-menu-btn"
+			class="md:hidden p-2 text-gray-700 hover:text-[#355070] transition-colors"
+			aria-label="Abrir menú"
 		>
+			<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+			</svg>
+		</button>
 	</div>
 </header>
+
+<!-- Full-screen mobile menu overlay -->
+<div
+	id="mobile-menu"
+	class="fixed inset-0 bg-gradient-to-br from-[#355070] via-[#2a4058] to-[#1f2f40] z-[100] hidden md:hidden transition-opacity duration-300"
+>
+	<div class="flex flex-col h-full">
+		<!-- Header with logo and close button -->
+		<div class="flex items-center justify-between p-4 h-20">
+			<div class="flex items-center gap-3">
+				<Icon name="ekomod-logo" class="w-10 h-10" />
+				<span class="text-white text-2xl font-bold">EKOMOD</span>
+			</div>
+			<button
+				id="mobile-menu-close"
+				class="p-2 text-white hover:text-[#E89B33] transition-colors"
+				aria-label="Cerrar menú"
+			>
+				<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+		</div>
+
+		<!-- Navigation links - large and touch-friendly -->
+		<nav class="flex-1 flex flex-col items-center justify-center gap-8">
+			<a
+				href="#container"
+				class="mobile-nav-link text-3xl text-white font-semibold hover:text-[#E89B33] transition-colors"
+			>
+				Inicio
+			</a>
+			<a
+				href="#houses"
+				class="mobile-nav-link text-3xl text-white font-semibold hover:text-[#E89B33] transition-colors"
+			>
+				Modelos
+			</a>
+			<a
+				href="#gallery"
+				class="mobile-nav-link text-3xl text-white font-semibold hover:text-[#E89B33] transition-colors"
+			>
+				Galería
+			</a>
+			<a
+				href="#faq"
+				class="mobile-nav-link text-3xl text-white font-semibold hover:text-[#E89B33] transition-colors"
+			>
+				FAQ
+			</a>
+			<a
+				href="#contact-us"
+				class="mobile-nav-link px-8 py-4 bg-[#E89B33] text-white rounded-xl text-2xl font-bold hover:bg-[#d68a24] transition-colors mt-4"
+			>
+				Contacto
+			</a>
+		</nav>
+
+		<!-- Decorative elements -->
+		<div class="absolute bottom-10 left-10 w-32 h-32 bg-[#E89B33] rounded-full blur-3xl opacity-20"></div>
+		<div class="absolute top-20 right-10 w-24 h-24 bg-[#6B8E23] rounded-full blur-3xl opacity-20"></div>
+	</div>
+</div>
 
 <script>
 	let lastScrollTop = 0;
 	const navbar = document.getElementById("navbar");
+	const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+	const mobileMenuClose = document.getElementById("mobile-menu-close");
+	const mobileMenu = document.getElementById("mobile-menu");
+
+	// Scroll to top when logo is clicked
+	document.getElementById("logo-link")?.addEventListener("click", (e) => {
+		e.preventDefault();
+		window.scrollTo({ top: 0, behavior: "smooth" });
+	});
+
+	// Handle scroll behavior
 	window.addEventListener("scroll", function () {
-		let scrollTop =
-			window.pageYOffset || document.documentElement.scrollTop;
-		if (scrollTop > lastScrollTop) {
+		let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+		if (scrollTop > lastScrollTop && scrollTop > 100) {
 			navbar?.classList.add("active");
 		} else {
 			navbar?.classList.remove("active");
 		}
+
 		lastScrollTop = scrollTop;
+	});
+
+	// Open mobile menu
+	mobileMenuBtn?.addEventListener("click", () => {
+		mobileMenu?.classList.remove("hidden");
+		document.body.style.overflow = "hidden";
+	});
+
+	// Close mobile menu
+	mobileMenuClose?.addEventListener("click", () => {
+		mobileMenu?.classList.add("hidden");
+		document.body.style.overflow = "";
+	});
+
+	// Close menu when clicking a mobile nav link
+	document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+		link.addEventListener("click", (e) => {
+			const href = link.getAttribute("href");
+			if (href && href.startsWith("#")) {
+				e.preventDefault();
+				mobileMenu?.classList.add("hidden");
+				document.body.style.overflow = "";
+				const target = document.querySelector(href);
+				if (target) {
+					target.scrollIntoView({ behavior: "smooth" });
+				}
+			}
+		});
+	});
+
+	// Smooth scroll for desktop nav links
+	document.querySelectorAll('.nav-link, a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			const href = this.getAttribute('href');
+			if (href && href.startsWith('#') && !this.classList.contains('mobile-nav-link')) {
+				e.preventDefault();
+				const target = document.querySelector(href);
+				if (target) {
+					target.scrollIntoView({ behavior: 'smooth' });
+				}
+			}
+		});
 	});
 </script>
 
 <style>
 	header.active {
-		top: -80px;
+		transform: translateY(-100%);
 	}
 </style>

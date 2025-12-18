@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import renderTipoS from "../assets/render-mod-tipo-s.png";
+import renderChalet from "../assets/render-chalet.png";
+import renderTipoM from "../assets/render-mod-tipo-m.png";
+import ProjectGalleryGrid from "./ProjectGalleryGrid";
+
+const projects = [
+	{
+		title: "Módulo Tipo S",
+		description: "40m² de diseño compacto y funcional",
+		image: renderTipoS,
+		category: "Modular"
+	},
+	{
+		title: "Chalet",
+		description: "Combinación perfecta de espacio y estilo",
+		image: renderChalet,
+		category: "Premium"
+	},
+	{
+		title: "Módulo Tipo M",
+		description: "80m² para máximo confort",
+		image: renderTipoM,
+		category: "Modular"
+	}
+];
+---
+
+<section id="gallery" class="py-20 md:py-32 bg-white">
+	<div class="container mx-auto px-4 md:px-6">
+		<div class="text-center mb-12 md:mb-16">
+			<h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+				Nuestros Proyectos
+			</h2>
+			<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+				Explora nuestra gama de casas modulares diseñadas para adaptarse a tus necesidades
+			</p>
+		</div>
+
+		<ProjectGalleryGrid projects={projects} client:load />
+	</div>
+</section>

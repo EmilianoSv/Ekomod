@@ -1,242 +1,38 @@
 ---
-import { Icon } from "astro-icon/components";
 import renderTipoS from "../assets/render-mod-tipo-s.png";
 import renderTipoM from "../assets/render-mod-tipo-m.png";
 import renderChalet from "../assets/render-chalet.png";
-import { Image } from "astro:assets";
+import HousesCarousel from "./HousesCarousel";
+
+const houses = [
+	{
+		id: 1,
+		title: "MÓDULO TIPO S",
+		subtitle: "40m²",
+		color: "#E89B33",
+		image: renderTipoS,
+		alt: "render-tipo-s"
+	},
+	{
+		id: 2,
+		title: "CHALET",
+		subtitle: "Tipo S 56m²",
+		subtitle2: "Tipo M 74m²",
+		color: "#6B8E23",
+		image: renderChalet,
+		alt: "render-chalet"
+	},
+	{
+		id: 3,
+		title: "MÓDULO TIPO M",
+		subtitle: "80m²",
+		color: "#355070",
+		image: renderTipoM,
+		alt: "render-tipo-m"
+	}
+];
 ---
 
-<section id="container" class="relative w-full overflow-hidden lg:h-auto!">
-	<div
-		id="cards-wrapper"
-		class="flex transition-transform duration-500 lg:flex-col"
-	>
-		<div
-			id="card-1"
-			class="bg-[#E89B33] min-w-full flex-shrink-0 overflow-hidden md:max-h-svh md:flex md:pl-12 lg:h-fit"
-		>
-			<div class="p-4 flex flex-col h-svh md:mt-32">
-				<div class="h-[33svh] flex flex-col gap-4 md:gap-6 lg:gap-2">
-					<h3
-						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
-					>
-						MODULO TIPO S
-					</h3>
-					<h3 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
-						40m2
-					</h3>
-					<a
-						href="#contact-us"
-						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28 lg:content-center"
-					>
-						MAS INFORMACION
-					</a>
-				</div>
-			</div>
-			<Image
-				src={renderTipoS}
-				alt="render-tipo-s"
-				id="render-tipo-s"
-				format="avif"
-				quality="high"
-				class="absolute bottom-20 left-40 scale-175 md:scale-110 md:relative md:-bottom-70 md:-left-20 md:w-[716px] md:h-[600px] lg:w-fit lg:h-[800px] lg:-bottom-25 lg:-left-10 2xl:left-20"
-			/>
-		</div>
-		<div
-			id="card-2"
-			class="bg-[#6B8E23] min-w-full flex-shrink-0 z-10 relative md:max-h-svh md:flex md:pl-12"
-		>
-			<div class="p-4 flex flex-col h-svh md:mt-32">
-				<div class="h-[36svh] flex flex-col gap-4 md:gap-6 lg:gap-4">
-					<h3
-						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
-					>
-						CHALET
-					</h3>
-					<h3 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
-						Tipo S 56m2
-					</h3>
-					<h3 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
-						Tipo M 74m2
-					</h3>
-					<a
-						href="#contact-us"
-						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28"
-					>
-						MAS INFORMACION
-					</a>
-				</div>
-			</div>
-			<Image
-				src={renderChalet}
-				alt="render-chalet"
-				id="render-chalet"
-				format="avif"
-				quality="high"
-				class="absolute bottom-25 left-35 scale-125 md:scale-100 md:relative md:h-svh md:-bottom-0 md:left-0 xl:left-110"
-			/>
-		</div>
-		<div
-			id="card-3"
-			class="bg-[#355070] min-w-full flex-shrink-0 z-20 relative md:max-h-svh md:flex md:pl-12"
-		>
-			<div class="p-4 flex flex-col h-svh md:mt-32">
-				<div class="h-[33svh] flex flex-col gap-4 md:gap-6 lg:gap-2">
-					<h3
-						class="text-6xl text-[#F5F5F5] font-semibold md:text-8xl"
-					>
-						MODULO <br /> TIPO M
-					</h3>
-					<h3 class="text-5xl text-[#F5F5F5] font-medium md:text-7xl">
-						80m2
-					</h3>
-					<a
-						href="#contact-us"
-						class="text-md text-white border-3 border-[#F5F5F5] rounded-xl p-4 font-regular w-50 mt-4 md:text-4xl md:w-fit md:h-28 lg:content-center"
-					>
-						MAS INFORMACION
-					</a>
-				</div>
-			</div>
-
-			<Image
-				src={renderTipoM}
-				alt="render-tipo-m"
-				id="render-tipo-m"
-				quality="high"
-				format="avif"
-				class="absolute bottom-25 left-40 scale-175 md:scale-100 md:relative md:-bottom-5 md:-left-20 xl:left-40"
-			/>
-		</div>
-	</div>
-	<!-- Navigation Arrows -->
-	<button
-		id="prev"
-		class="absolute text-9xl font-extrabold top-1/2 -left-10 transform -translate-y-1/2 text-white p-3 rounded-full arrowHidden lg:hidden"
-	>
-		<Icon name="mdi-light:chevron-left" />
-	</button>
-	<button
-		id="next"
-		class="absolute text-9xl font-extrabold top-1/2 -right-10 transform -translate-y-1/2 text-white p-3 rounded-full lg:hidden"
-	>
-		<Icon name="mdi-light:chevron-right" />
-	</button>
+<section id="houses" class="w-full">
+	<HousesCarousel houses={houses} client:load />
 </section>
-
-<style>
-	#container {
-		position: relative;
-		width: 100%;
-		height: 100vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	#cards-wrapper {
-		display: flex;
-		width: 100%;
-		height: 100%;
-		transform: translateX(0%);
-	}
-
-	#cards-wrapper > div {
-		width: 100%;
-		height: 100%;
-		flex-shrink: 0;
-	}
-
-	.arrowHidden {
-		display: none;
-	}
-
-	button {
-		cursor: pointer;
-	}
-
-	@media screen and (min-width: 1230px) and (max-width: 1440px) {
-		#render-chalet {
-			left: 125px;
-		}
-		#render-tipo-m {
-			left: 45px;
-		}
-		h3 {
-			font-size: 4rem;
-		}
-		a {
-			width: 22rem;
-			font-size: 2rem;
-		}
-	}
-</style>
-
-<script>
-	let currentIndex = 0;
-	const cardsWrapper = document.getElementById("cards-wrapper");
-	const totalCards = document.querySelectorAll("#cards-wrapper > div").length;
-	const prevArrow = document.getElementById("prev");
-	const nextArrow = document.getElementById("next");
-
-	nextArrow?.addEventListener("click", () => moveNext());
-	prevArrow?.addEventListener("click", () => movePrev());
-
-	// Function to move to the next card
-	function moveNext() {
-		if (currentIndex < totalCards - 1) {
-			currentIndex++;
-			prevArrow?.classList.remove("arrowHidden");
-			updateCarousel();
-		}
-		if (currentIndex === totalCards - 1) {
-			nextArrow?.classList.add("arrowHidden");
-		}
-	}
-
-	// Function to move to the previous card
-	function movePrev() {
-		if (currentIndex > 0) {
-			currentIndex--;
-			nextArrow?.classList.remove("arrowHidden");
-			updateCarousel();
-		}
-		if (currentIndex === 0) {
-			prevArrow?.classList.add("arrowHidden");
-		}
-	}
-
-	// Update the position of the carousel
-	function updateCarousel() {
-		const offset = -currentIndex * 100;
-		if (cardsWrapper) {
-			cardsWrapper.style.transform = `translateX(${offset}%)`;
-		}
-	}
-
-	// **Swipe Gesture Support**
-	let startX = 0;
-	let endX = 0;
-
-	// Detect when the user starts touching
-	cardsWrapper?.addEventListener("touchstart", (e) => {
-		startX = e.touches[0].clientX;
-	});
-
-	// Detect when the user stops touching
-	cardsWrapper?.addEventListener("touchend", (e) => {
-		endX = e.changedTouches[0].clientX;
-		handleSwipe();
-	});
-
-	// Function to handle swipe gestures
-	function handleSwipe() {
-		const swipeDistance = endX - startX;
-
-		if (swipeDistance > 50) {
-			movePrev(); // Swipe right → Move to previous card
-		} else if (swipeDistance < -50) {
-			moveNext(); // Swipe left → Move to next card
-		}
-	}
-</script>

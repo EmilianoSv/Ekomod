@@ -2,6 +2,23 @@
 import "../styles/global.css";
 import "@fontsource-variable/urbanist";
 import { ClientRouter } from "astro:transitions";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	hideWhatsApp?: boolean;
+}
+
+const {
+	title = "Ekomod - Casas Modulares Sostenibles en Colombia",
+	description = "Construye tu hogar en solo 60 días. Casas modulares premium con diseño personalizado, construcción rápida y materiales sostenibles. Solicita tu cotización gratis.",
+	image = "/og-image.jpg",
+	hideWhatsApp = false
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://ekomod.com.co");
 ---
 
 <!doctype html>
@@ -12,10 +29,40 @@ import { ClientRouter } from "astro:transitions";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<ClientRouter />
-		<title>Ekomod - Casas modulares</title>
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Keywords -->
+		<meta name="keywords" content="casas modulares, casas prefabricadas, construcción sostenible, casas ecológicas, Colombia, vivienda modular, construcción rápida, Ekomod" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		<meta property="og:locale" content="es_CO" />
+		<meta property="og:site_name" content="Ekomod" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalURL} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+
+		<!-- Additional SEO -->
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Ekomod" />
+		<meta name="theme-color" content="#355070" />
 	</head>
 	<body>
 		<slot />
+		{!hideWhatsApp && <WhatsAppButton />}
 	</body>
 </html>
 

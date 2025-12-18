@@ -1,147 +1,36 @@
 ---
-import background from "../assets/background-image-2.png";
-import { Image } from "astro:assets";
+import WhyChooseUsSteps from "./WhyChooseUsSteps";
 ---
 
-<section id="container" class="h-svh lg:flex">
-	<div
-		class="w-full h-full bg-black -z-10 absolute lg:relative lg:z-0 lg:w-1/2"
-	>
-		<Image
-			src={background}
-			alt="Casas modulares"
-			format="avif"
-			quality="high"
-			class="w-full h-full object-cover opacity-60"
-		/>
+<section id="why-choose-us" class="py-20 md:py-32 bg-linear-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+	<!-- Decorative background elements -->
+	<div class="absolute inset-0 opacity-5">
+		<div class="absolute top-0 left-0 w-96 h-96 bg-[#E89B33] rounded-full blur-3xl"></div>
+		<div class="absolute bottom-0 right-0 w-96 h-96 bg-[#6B8E23] rounded-full blur-3xl"></div>
 	</div>
-	<div class="flex h-full p-4 lg:w-1/2">
-		<div class="flex flex-col items-center justify-around">
-			<div
-				id="title-container"
-				class="flex flex-col h-52 justify-around lg:grow lg:justify-center lg:pb-2"
+
+	<div class="container mx-auto px-4 md:px-6 relative z-10">
+		<div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+			<h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-linear-to-r from-[#E89B33] via-[#6B8E23] to-[#355070] bg-clip-text text-transparent">
+				Así de fácil es tener tu casa modular
+			</h2>
+			<p class="text-xl md:text-2xl text-gray-600">
+				Un proceso simple y transparente de principio a fin
+			</p>
+		</div>
+
+		<div class="max-w-4xl mx-auto">
+			<WhyChooseUsSteps client:load />
+		</div>
+
+		<!-- CTA Section -->
+		<div class="mt-16 text-center">
+			<a
+				href="#contact-us"
+				class="inline-block px-12 py-4 bg-linear-to-r from-[#E89B33] to-[#6B8E23] text-white text-lg md:text-xl font-bold rounded-full shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer"
 			>
-				<h3
-					class="text-4xl text-center font-bold text-[#F5F5F5] md:text-6xl lg:text-[#6B8E23] xl:text-6xl!"
-				>
-					Así de fácil es tener tu casa modular
-				</h3>
-			</div>
-			<div
-				id="content-container"
-				class="flex flex-col text-center gap-2 grow justify-around md:px-4 lg:justify-evenly! lg:w-full lg:items-center"
-			>
-				<div
-					id="bullet-container"
-					class="flex flex-col items-center lg:flex-col lg:items-start lg:text-left"
-				>
-					<h4
-						id="paragraph-text"
-						class="font-bold text-white sm:text-2xl md:text-2xl lg:text-black"
-					>
-						1. Cuéntanos tu proyecto
-					</h4>
-					<p
-						id="paragraph-text"
-						class="text-[#F5F5F5] text-sm sm:text-base md:text-2xl lg:grow lg:text-black lg:w-full lg:text-xl"
-					>
-						Nos contactas y nos compartes tu idea. Te asesoramos
-						para encontrar la mejor solución según tu terreno,
-						necesidades y presupuesto.
-					</p>
-				</div>
-				<div
-					id="bullet-container"
-					class="flex flex-col items-center lg:w-full lg:flex-col lg:items-start lg:text-left lg:text-2xl"
-				>
-					<h4
-						id="paragraph-text"
-						class="font-bold text-white sm:text-2xl md:text-2xl lg:text-black"
-					>
-						2. Diseñamos tu espacio ideal
-					</h4>
-					<p
-						id="paragraph-text"
-						class="text-[#F5F5F5] text-sm sm:text-base md:text-2xl lg:grow lg:text-black lg:w-full lg:text-xl"
-					>
-						Adaptamos el diseño a tu estilo de vida y preferencias.
-						Te mostramos opciones personalizadas para que elijas la
-						mejor distribución y acabados.
-					</p>
-				</div>
-				<div
-					id="bullet-container"
-					class="flex flex-col items-center lg:flex-col lg:items-start lg:text-left lg:text-2xl"
-				>
-					<h4
-						id="paragraph-text"
-						class="font-bold text-white sm:text-2xl md:text-2xl lg:text-black"
-					>
-						3. Construimos con rapidez y calidad
-					</h4>
-					<p
-						id="paragraph-text"
-						class="text-[#F5F5F5] text-sm sm:text-base md:text-2xl lg:grow lg:text-black lg:w-full lg:text-xl"
-					>
-						Fabricamos tu casa modular con materiales de alta
-						calidad y tecnología eficiente, reduciendo tiempos y
-						garantizando un proceso sin complicaciones.
-					</p>
-				</div>
-				<div
-					id="bullet-container"
-					class="flex flex-col items-center lg:flex-col lg:items-start lg:text-left lg:text-2xl"
-				>
-					<h4
-						id="paragraph-text"
-						class="font-bold text-white sm:text-2xl md:text-2xl lg:text-black"
-					>
-						4. Te entregamos tu casa lista para disfrutar
-					</h4>
-					<p
-						id="paragraph-text"
-						class="text-[#F5F5F5] text-sm sm:text-base md:text-2xl lg:grow lg:text-black lg:w-full lg:text-xl"
-					>
-						Cumplimos con nuestra promesa de entrega para que en
-						poco tiempo puedas comenzar a vivir o rentar tu nueva
-						propiedad sin demoras.
-					</p>
-				</div>
-			</div>
+				Comienza tu proyecto hoy
+			</a>
 		</div>
 	</div>
 </section>
-
-<style>
-	/* @media screen and (min-width: 400px) and (max-width: 640px) {
-		#paragraph-text {
-			font-size: 1.2rem;
-		}
-	} */
-
-	@media screen and (min-width: 1230px) and (max-width: 1440px) {
-		h3 {
-			font-size: 2.5rem;
-		}
-
-		#title-container {
-			height: 10vh;
-		}
-
-		#bullet-container {
-			gap: 2px;
-		}
-
-		#content-container {
-			justify-content: center;
-			padding-bottom: 0;
-		}
-		h4 {
-			font-size: 1.3rem;
-		}
-
-		p {
-			font-size: 1.2rem;
-		}
-	}
-</style>

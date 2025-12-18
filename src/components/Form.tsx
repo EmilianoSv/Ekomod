@@ -64,82 +64,61 @@ export function Form({
 			{sentSuccessfully ? (
 				<MessageSucceeded />
 			) : (
-				<>
-					<h3 className="text-5xl text-center w-full md:text-6xl lg:text-center lg:px-20 lg:pt-20">
-						Contáctanos
-					</h3>
-					<div className="md:px-10 lg:px-0 lg:self-center lg:w-[90%] lg:content-center">
-						<FormContext.Provider value={formContext}>
-							<form
-								{...formProps}
-								method="POST"
-								action="/"
-								className="flex flex-col gap-2 lg:grid lg:grid-cols-2 lg:content-center lg:gap-4 lg:h-auto"
-								id="contact-form"
-								onSubmit={async (e) => {
-									e.preventDefault();
-									e.stopPropagation();
+				<FormContext.Provider value={formContext}>
+					<form
+						{...formProps}
+						method="POST"
+						action="/"
+						id="contact-form"
+						onSubmit={async (e) => {
+							e.preventDefault();
+							e.stopPropagation();
 
-									const formData = new FormData(
-										e.currentTarget
-									);
-									formContext.set((formState) => ({
-										...formState,
-										isSubmitPending: true,
-										submitStatus: "validating",
-									}));
+							const formData = new FormData(e.currentTarget);
+							formContext.set((formState) => ({
+								...formState,
+								isSubmitPending: true,
+								submitStatus: "validating",
+							}));
 
-									const parsed = await validateForm({
-										formData,
-										validator,
-									});
+							const parsed = await validateForm({
+								formData,
+								validator,
+							});
 
-									if (parsed.data) {
-										const response = await fetch(
-											"/api/contact",
-											{
-												method: "POST",
-												body: formData,
-											}
-										);
+							if (parsed.data) {
+								const response = await fetch("/api/contact", {
+									method: "POST",
+									body: formData,
+								});
 
-										if (response.ok) {
-											const json = await response.json();
-											if (json.success) {
-												setSentSuccessfully(
-													json.success
-												);
-
-												e.currentTarget.reset();
-											}
-										} else {
-											console.log(response);
-										}
-
-										return;
+								if (response.ok) {
+									const json = await response.json();
+									if (json.success) {
+										setSentSuccessfully(json.success);
+										e.currentTarget.reset();
 									}
+								} else {
+									console.log(response);
+								}
 
-									formContext.set((formState) => ({
-										...formState,
-										isSubmitPending: false,
-										submitStatus: "idle",
-									}));
-									formContext.setValidationErrors(
-										parsed.fieldErrors
-									);
-								}}
-							>
-								{name ? (
-									<input
-										{...formNameInputProps}
-										value={name}
-									/>
-								) : null}
-								{children}
-							</form>
-						</FormContext.Provider>
-					</div>
-				</>
+								return;
+							}
+
+							formContext.set((formState) => ({
+								...formState,
+								isSubmitPending: false,
+								submitStatus: "idle",
+							}));
+							formContext.setValidationErrors(parsed.fieldErrors);
+						}}
+					>
+						{name ? (
+							<input {...formNameInputProps} value={name} />
+						) : null}
+						{children}
+					</form>
+				</FormContext.Provider>
 			)}
 		</>
 	);
@@ -148,10 +127,10 @@ export function Form({
 export function Input(inputProps: ComponentProps<"input"> & { name: string }) {
 	const formContext = useFormContext();
 	const fieldState = formContext.value.fields[inputProps.name];
+
+	// Defensive check - render basic input during hydration
 	if (!fieldState) {
-		throw new Error(
-			`Input "${inputProps.name}" not found in form. Did you use the <Form> component?`
-		);
+		return <input {...inputProps} />;
 	}
 
 	const { hasErroredOnce, validationErrors, validator } = fieldState;
@@ -161,48 +140,50 @@ export function Input(inputProps: ComponentProps<"input"> & { name: string }) {
 				onBlur={async (e) => {
 					const value = e.currentTarget.value;
 					if (value === "") return;
-					formContext.validateField(
-						inputProps.name,
-						value,
-						validator
-					);
+					formContext.validateField(inputProps.name, value, validator);
 				}}
 				onInput={async (e) => {
 					if (!hasErroredOnce) return;
 					const value = e.currentTarget.value;
-					formContext.validateField(
-						inputProps.name,
-						value,
-						validator
-					);
+					formContext.validateField(inputProps.name, value, validator);
 				}}
 				{...inputProps}
 			/>
-			<div className="absolute top-19 lg:top-30">
-				<p className="text-red-500 text-xs lg:text-base lg:font-semibold">
+			{validationErrors?.length > 0 && (
+				<p className="text-red-500 text-xs mt-1">
 					{validationErrors?.at(0) === "Required"
 						? "Requerido"
 						: validationErrors?.at(0)}
 				</p>
-			</div>
+			)}
 		</>
 	);
 }
 
 export function Select({
 	name,
-	options,
+	options = [],
 	...inputProps
 }: ComponentProps<"select"> & {
 	name: string;
-	options: { value: string; label: string }[];
+	options?: { value: string; label: string }[];
 }) {
 	const formContext = useFormContext();
 	const fieldState = formContext.value.fields[name];
 
+	// Defensive check - render basic select during hydration
 	if (!fieldState) {
-		throw new Error(
-			`Select "${name}" not found in form. Did you use the <Form> component?`
+		return (
+			<select {...inputProps} name={name} defaultValue={"seleccione"}>
+				<option value="seleccione" disabled>
+					Seleccione
+				</option>
+				{options?.map((option) => (
+					<option key={option.value} value={option.value}>
+						{option.label}
+					</option>
+				))}
+			</select>
 		);
 	}
 
@@ -216,7 +197,7 @@ export function Select({
 				defaultValue={"seleccione"}
 				onBlur={async (e) => {
 					const value = e.currentTarget.value;
-					if (value === "") return; // Avoid triggering validation on empty selection
+					if (value === "") return;
 					formContext.validateField(name, value, validator);
 				}}
 				onInput={async (e) => {
@@ -228,19 +209,19 @@ export function Select({
 				<option value="seleccione" disabled>
 					Seleccione
 				</option>
-				{options.map((option) => (
+				{options?.map((option) => (
 					<option key={option.value} value={option.value}>
 						{option.label}
 					</option>
 				))}
 			</select>
-			<div className="absolute top-19 lg:top-30">
-				<p className="text-red-500 text-xs lg:text-base lg:font-semibold">
+			{validationErrors?.length > 0 && (
+				<p className="text-red-500 text-xs mt-1">
 					{validationErrors?.at(0) === "Required"
 						? "Requerido"
 						: validationErrors?.at(0)}
 				</p>
-			</div>
+			)}
 		</>
 	);
 }
@@ -252,10 +233,9 @@ export function Textarea({
 	const formContext = useFormContext();
 	const fieldState = formContext.value.fields[name];
 
+	// Defensive check - render basic textarea during hydration
 	if (!fieldState) {
-		throw new Error(
-			`Textarea "${name}" not found in form. Did you use the <Form> component?`
-		);
+		return <textarea {...inputProps} name={name} />;
 	}
 
 	const { hasErroredOnce, validationErrors, validator } = fieldState;
@@ -267,7 +247,7 @@ export function Textarea({
 				name={name}
 				onBlur={async (e) => {
 					const value = e.currentTarget.value;
-					if (value === "") return; // Avoid triggering validation on empty textarea
+					if (value === "") return;
 					formContext.validateField(name, value, validator);
 				}}
 				onInput={async (e) => {
@@ -276,13 +256,13 @@ export function Textarea({
 					formContext.validateField(name, value, validator);
 				}}
 			/>
-			<div className="absolute top-46 lg:top-63">
-				<p className="text-red-500 text-xs lg:text-base lg:font-semibold">
+			{validationErrors?.length > 0 && (
+				<p className="text-red-500 text-xs mt-1">
 					{validationErrors?.at(0) === "Required"
 						? "Requerido"
 						: validationErrors?.at(0)}
 				</p>
-			</div>
+			)}
 		</>
 	);
 }
