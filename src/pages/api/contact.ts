@@ -22,10 +22,17 @@ export async function POST(context: { request: { formData: () => any } }) {
 			);
 		}
 
-		console.log("MAIL ENVIADO!");
+		// Validate API key is configured
+		const apiKey = process.env.RESEND_API_KEY;
+		if (!apiKey) {
+			console.error("RESEND_API_KEY environment variable is not configured");
+			return new Response(
+				JSON.stringify({ error: "Server configuration error" }),
+				{ status: 500 }
+			);
+		}
 
-		//sent email via resend here
-		const resend = new Resend(import.meta.env.RESEND_API_KEY);
+		const resend = new Resend(apiKey);
 
 		const emailContent = ContactEmail({
 			authorName: parsed.data.name,

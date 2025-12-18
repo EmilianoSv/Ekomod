@@ -1,11 +1,12 @@
 import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_BaK1mv8C.mjs';
 import 'piccolore';
-import { $ as $$Layout } from '../chunks/Icon_AGNatuuD.mjs';
-import { $ as $$Navbar, a as $$Footer } from '../chunks/Footer_BFH0d66F.mjs';
+import { $ as $$Layout } from '../chunks/Icon_CDn73aNP.mjs';
+import { $ as $$LegalNavbar } from '../chunks/LegalNavbar_CVoOpql5.mjs';
+import { $ as $$Footer } from '../chunks/Footer_DX_dgB8m.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Privacidad = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, {}, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Navbar", $$Navbar, {})} ${maybeRenderHead()}<main class="pt-32 pb-20 min-h-screen bg-gray-50"> <div class="container mx-auto px-4 md:px-6 max-w-4xl"> <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Política de Privacidad</h1> <div class="prose prose-lg max-w-none text-gray-700 space-y-8"> <p class="text-xl text-gray-600">
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, {}, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "LegalNavbar", $$LegalNavbar, {})} ${maybeRenderHead()}<main class="pt-32 pb-20 min-h-screen bg-gray-50"> <div class="container mx-auto px-4 md:px-6 max-w-4xl"> <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Política de Privacidad</h1> <div class="prose prose-lg max-w-none text-gray-700 space-y-8"> <p class="text-xl text-gray-600">
 Última actualización: ${(/* @__PURE__ */ new Date()).toLocaleDateString("es-CO", { year: "numeric", month: "long", day: "numeric" })} </p> <section class="space-y-4"> <h2 class="text-2xl font-bold text-gray-900">1. Información que Recopilamos</h2> <p>
 En Ekomod, recopilamos información personal que usted nos proporciona voluntariamente cuando:
 </p> <ul class="list-disc pl-6 space-y-2"> <li>Completa nuestro formulario de contacto</li> <li>Solicita una cotización para su proyecto</li> <li>Se comunica con nosotros por correo electrónico o teléfono</li> </ul> <p>
