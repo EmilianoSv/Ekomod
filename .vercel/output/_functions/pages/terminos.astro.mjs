@@ -1,7 +1,7 @@
 import { c as createComponent, r as renderComponent, a as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_BaK1mv8C.mjs';
 import 'piccolore';
-import { $ as $$Layout } from '../chunks/Icon_DBagqWEU.mjs';
-import { $ as $$Navbar, a as $$Footer } from '../chunks/Footer_CJafoend.mjs';
+import { $ as $$Layout } from '../chunks/Icon_AGNatuuD.mjs';
+import { $ as $$Navbar, a as $$Footer } from '../chunks/Footer_BFH0d66F.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Terminos = createComponent(($$result, $$props, $$slots) => {

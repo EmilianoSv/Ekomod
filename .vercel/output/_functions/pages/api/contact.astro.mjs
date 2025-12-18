@@ -114,58 +114,65 @@ const paragraphItem = {
 };
 
 async function POST(context) {
-  const formData = await context.request.formData();
-  const formDataObject = Object.fromEntries(formData);
-  const schema = z.object(contactFormValidator.validator);
-  const parsed = schema.safeParse(formDataObject);
-  if (!parsed.success) {
-    return new Response(
-      JSON.stringify({ errors: parsed.error.flatten().fieldErrors }),
-      { status: 400 }
-    );
-  }
-  console.log("MAIL ENVIADO!");
-  const resend = new Resend(process.env.RESEND_API_KEY);
-  const emailContent = ContactEmail({
-    authorName: parsed.data.name,
-    authorEmail: parsed.data.email,
-    authorPhone: parsed.data.phone,
-    projectSelected: parsed.data.projects,
-    messageText: parsed.data.message
-  });
-  const html = await render(emailContent);
-  const text = await render(emailContent, {
-    plainText: true
-  });
-  const { data, error } = await resend.emails.send({
-    from: "Web Ekomod <contacto@ekomod.com.co>",
-    to: ["Konstruct.soluciones@gmail.com"],
-    subject: parsed.data.name + " - " + parsed.data.projects,
-    html,
-    text
-  });
-  if (error) {
+  try {
+    const formData = await context.request.formData();
+    const formDataObject = Object.fromEntries(formData);
+    const schema = z.object(contactFormValidator.validator);
+    const parsed = schema.safeParse(formDataObject);
+    if (!parsed.success) {
+      return new Response(
+        JSON.stringify({ errors: parsed.error.flatten().fieldErrors }),
+        { status: 400 }
+      );
+    }
+    console.log("MAIL ENVIADO!");
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const emailContent = ContactEmail({
+      authorName: parsed.data.name,
+      authorEmail: parsed.data.email,
+      authorPhone: parsed.data.phone,
+      projectSelected: parsed.data.projects,
+      messageText: parsed.data.message
+    });
+    const html = await render(emailContent);
+    const text = await render(emailContent, {
+      plainText: true
+    });
+    const { data, error } = await resend.emails.send({
+      from: "Web Ekomod <contacto@ekomod.com.co>",
+      to: ["Konstruct.soluciones@gmail.com"],
+      subject: parsed.data.name + " - " + parsed.data.projects,
+      html,
+      text
+    });
+    if (error) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          message: "Error al mandar el mensaje"
+        }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json" }
+        }
+      );
+    }
     return new Response(
       JSON.stringify({
-        success: false,
-        message: "Error al mandar el mensaje"
+        success: true,
+        message: "Recibimos su mensaje"
       }),
       {
-        status: 400,
+        status: 200,
         headers: { "Content-Type": "application/json" }
       }
     );
+  } catch (error) {
+    console.error(error);
+    return new Response(JSON.stringify({ error: "Internal Server Error" }), {
+      status: 500
+    });
   }
-  return new Response(
-    JSON.stringify({
-      success: true,
-      message: "Recibimos su mensaje"
-    }),
-    {
-      status: 200,
-      headers: { "Content-Type": "application/json" }
-    }
-  );
 }
 
 const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
